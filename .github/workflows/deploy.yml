@@ -1,0 +1,61 @@
+name: Deploy to Github Page
+
+## configuracion inicial trigger + permission
+on:
+  push:
+    branches: ["main"]
+permissions:
+  content: read
+  pages: write
+  id-token: write
+
+concurrency: 
+  group: "pages"
+  cancel-in-progress: true
+
+## jobs q ue se encargan de la arquitectura del pipeline
+
+## build
+## 1) Descaga codigo
+## 2) instala dependencias
+## 3) Ejecuta npm run build
+## 4) sube el resultado como artifact
+
+jobs:
+  # ===== JOB 1: BUILD (CI) =====
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # 1) obtener el codigo del repot dentro del runner
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: "npm"
+    - name: Install
+      run: npm ci
+    - name : build
+      run: npm run build
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url}}
+
+    steps: 
+    - name: Deploy
+      id: deployment 
+      uses: actions?deploy-pages@v4
+      
+
+
+
