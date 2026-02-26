@@ -42,22 +42,22 @@ export const counterData = [
 
 export const serviceData = [
     {
-        image:blog1,
-        icon:'ri-tools-line',
-        title:'Installation',
-        desc:'The phrasal sequence of the is now so that many campaign and benefit'
+    image: blog1,
+    icon: 'ri-tools-line',
+    title: 'All your field data in your pocket just focus on execution',
+    desc: 'Free up hours of manual labor in data collection: cacao pod counting, phytosanitary disease detection, and more, directly from the field.'
     },
     {
-        image:blog2,
-        icon:'ri-settings-5-line',
-        title:'Maintenance',
-        desc:'The phrasal sequence of the is now so that many campaign and benefit'
+    image: blog2,
+    icon: 'ri-settings-5-line',
+    title: 'Automate weed control in your fields',
+    desc: 'Use our autonomous rover to cut weeds in specific areas of your farm while it scans the real-time health of your crops.'
     },
     {
-        image:blog3,
-        icon:'ri-honour-line',
-        title:'System Design',
-        desc:'The phrasal sequence of the is now so that many campaign and benefit'
+    image: blog3,
+    icon: 'ri-honour-line',
+    title: 'Turn field data into actionable decisions',
+    desc: 'Get dense, high‑precision soil analysis across your entire farm to make better decisions on fertilization, irrigation, and crop management.'
     },
     {
         image:blog4,
@@ -80,60 +80,54 @@ export const serviceData = [
 ]
 
 export const projectdata = [
-    {
-        id:1,
-        image:blog1,
-        title:'Solar Revolution',
-        subTitle:'Solar Transformation'
-    },
-    {
-        id:2,
-        image:blog2,
-        title:'Sunwave Energy',
-        subTitle:'Solar Solutions'
-    },
-    {
-        id:3,
-        image:blog3,
-        title:'Solar Sync',
-        subTitle:'Green Energy'
-    },
-    {
-        id:4,
-        image:blog4,
-        title:'Solstice Systems',
-        subTitle:'Eco Future'
-    },
-    {
-        id:5,
-        image:blog5,
-        title:'Solar Spark',
-        subTitle:'Clean Energy'
-    },
-    {
-        id:6,
-        image:blog6,
-        title:'Sun Power',
-        subTitle:'Bright Future'
-    },
-    {
-        id:7,
-        image:blog7,
-        title:'Solar Green Energy Project',
-        subTitle:'Green Technology'
-    },
-    {
-        id:8,
-        image:blog8,
-        title:'SolarEdge Innovations',
-        subTitle:'Solar Transformation'
-    },
-    {
-        id:9,
-        image:blog9,
-        title:'SolarSage Initiative',
-        subTitle:'Energy Independence'
-    },
+{
+    id:1,
+    image:blog1,
+    title:'Cacao Health AI',
+    subTitle:'Predictive Disease Detection System'
+},
+{
+    id:2,
+    image:blog9,
+    title:'Cacao Yield Vision',
+    subTitle:'Intelligent Pod Counting'
+},
+{
+    id:3,
+    image:blog2,
+    title:'Smart Weed Control',
+    subTitle:'Automated Weed Cutting System'
+},
+{
+    id:4,
+    image:blog9,
+    title:'Soil Insight',
+    subTitle:'Soil Sampling and Analysis'
+},
+{
+    id:5,
+    image:blog6,
+    title:'AgroData Platform',
+    subTitle:'Smart Farm Management'
+},
+{
+    id:6,
+    image:blog7,
+    title:'Cacao Sustainability',
+    subTitle:'Regenerative Agriculture Solutions'
+},
+{
+    id:7,
+    image:blog8,
+    title:'Precision Farming',
+    subTitle:'Multispectral Imaging Technology'
+},
+{
+    id:8,
+    image:blog9,
+    title:'Yield Optimization',
+    subTitle:'Production Performance Enhancement'
+},
 ]
 
 export const clientData = [
@@ -229,23 +223,22 @@ export const pricingData = [
 export const faqData = [
     {
         id:1,
-        title:'How does it work ?',
-        desc:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.'
-    },
+        title:'How does the system work?',
+        desc: 'The rover integrates RGB cameras, LiDAR, environmental sensors, and an embedded computing unit to run our computer vision models. It detects diseases, counts cacao pods, and analyzes crop conditions in real time directly in the field.'    },
     {
         id:2,
-        title:'Do I need a designer to use Greenoza ?',
-        desc:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.'
+        title:'What technology powers the platform?',
+        desc:'Our solution combines artificial intelligence, convolutional neural networks, and RGB imaging to classify cacao health status, estimate yield, and generate actionable agronomic insights for farmers and agribusiness stakeholders.'
     },
     {
         id:3,
-        title:'What do I need to do to start selling ?',
-        desc:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.'
+        title:'How can farmers implement the system?',
+        desc:'The platform is designed for seamless deployment in cacao farms. Once installed, the rover autonomously navigates the plantation, collects field data, and synchronizes results to a centralized dashboard for monitoring and decision-making.'
     },
     {
         id:4,
-        title:'What happens when I receive an order ?',
-        desc:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.'
+        title:'What happens after data is collected?',
+        desc:'Captured data is processed through our predictive analytics engine. Farmers receive reports on disease risk, production estimates, and soil condition indicators, enabling early intervention, optimized resource use, and improved productivity.'
     },
 ]
 
