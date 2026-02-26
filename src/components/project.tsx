@@ -11,7 +11,7 @@ interface ProjectData{
 export default function Project() {
   return (
     <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-6">
-        {projectdata.slice(0,6).map((item:ProjectData,index:number)=>(
+        {projectdata.slice(0,3).map((item:ProjectData,index:number)=>(
             <div className="group relative overflow-hidden rounded-md shadow-sm shadow-slate-200 dark:shadow-slate-800" key={index}>
                 <div className="relative md:shrink-0">
                     <img className="object-cover md:w-96 w-full h-85 group-hover:scale-105 duration-500" src={item.image} alt=""/>

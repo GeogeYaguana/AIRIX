@@ -12,7 +12,7 @@ export default function ServiceThree() {
   return (
         <div className="lg:col-span-7 md:col-span-6">
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-6 md:mt-0 mt-6">
-                {serviceData.slice(0,6).map((item:ServicesData,index:number)=>( 
+                {serviceData.slice(0,3).map((item:ServicesData,index:number)=>( 
                     <div className="group p-6 bg-white dark:bg-slate-900 hover:shadow-sm shadow-slate-200 dark:shadow-slate-800 duration-500 rounded-2xl relative overflow-hidden h-fit" key={index}>
                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 duration-500 bg-top bg-no-repeat bg-cover" style={{backgroundImage:`url(${item.image})`}}></div>
                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 duration-500 bg-slate-900/60"></div>

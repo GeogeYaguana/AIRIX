@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import image1 from '../assets/images/3.jpg'
-import image2 from '../assets/images/4.jpg'
 import Accordion from './accordion'
 
 export default function Faq() {
@@ -14,18 +12,6 @@ export default function Faq() {
                 <div className="relative">
                     <div className="relative md:shrink-0 lg:ms-0 ms-10">
                         <img className="object-cover lg:w-96 sm:w-[80%] w-[80%] sm:h-[500px] h-[450px] rounded-lg shadow-md dark:shadow-gyay-700 ms-auto" src={image1} alt=""/>
-                    </div>
-
-                    <div className="absolute bottom-10 lg:start-6 start-0">
-                        <div className="absolute z-1 -top-[26px] right-0 xl:text-end lg:text-start text-start">
-                            <Link to="#!" onClick={()=>setOpen(!isOpen)} className="lightbox size-16 rounded-lg shadow-md dark:shadow-gyay-700 inline-flex items-center justify-center bg-primary text-white">
-                                <i className="ri-play-fill inline-flex items-center justify-center text-xl"></i>
-                            </Link>
-                        </div>
-
-                        <div className="relative md:shrink-0">
-                            <img className="object-cover size-48 rounded-lg shadow-md dark:shadow-gyay-700" src={image2} alt=""/>
-                        </div>
                     </div>
                 </div>
             </div>
