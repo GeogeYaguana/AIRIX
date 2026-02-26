@@ -2,274 +2,219 @@
 /*         Menu                  */
 /*===============================*/
 #topnav {
-    @apply fixed start-0 end-0 top-0 z-999 bg-transparent border-0 duration-500 ease-in-out;
-    .logo {
-        @apply ltr:!float-left rtl:!float-right !text-slate-900 dark:!text-white;
-        .l-dark {
-            @apply hidden;
-        }
-        .l-light {
-            @apply inline-block;
-        }
-        &:focus {
-          @apply outline-none;
-        }
-    }
-    .has-submenu{
-      @apply relative;
-      &.active {
-        a {
-          @apply text-white dark:text-slate-900;
-        }
-        .submenu {
-          li{
-            &.active {
-              > a {
-                @apply !text-primary dark:!text-primary;
-              }
-            }
-          }
-        }
-        &.active {
-          .menu-arrow {
-            @apply border-primary dark:border-primary;
-          }
-        }
-      }
+  @apply fixed start-0 end-0 top-0 z-999 border-0 duration-500 ease-in-out bg-white;
+
+  .logo {
+    @apply ltr:!float-left rtl:!float-right !text-slate-900 dark:!text-white;
+    .l-dark { @apply hidden; }
+    .l-light { @apply inline-block; }
+    &:focus { @apply outline-none; }
+  }
+
+  .has-submenu {
+    @apply relative;
+
+    /* ✅ Forzar texto negro incluso en active */
+    &.active {
+      a { @apply !text-black dark:!text-black; }
+
       .submenu {
-        .submenu-arrow {
-          border-width: 0px 0.125rem 0.125rem 0px;
-          @apply absolute end-[1.25rem] top-[15px] border-black dark:border-white rounded-[0.5px] inline-block p-[2px] ltr:-rotate-[45deg] rtl:rotate-[135deg];
-        }
-        .has-submenu {
-          &:hover {
-            > .submenu-arrow {
-              @apply border-primary dark:border-primary;
-            }
-          }
-          .submenu {
-            .has-submenu{
-              &:hover {
-                .submenu-arrow {
-                  @apply border-primary dark:border-primary;
-                }
-                > .submenu-arrow {
-                  @apply border-primary dark:border-primary;
-                }
-              }
-            }
+        li {
+          &.active {
+            > a { @apply !text-primary dark:!text-primary; }
           }
         }
+      }
+
+      &.active {
+        .menu-arrow { @apply border-primary dark:border-primary; }
       }
     }
-    .navbar-toggle {
-      @apply border-0 relative p-0 m-0 cursor-pointer;
-      .lines {
-        @apply w-[25px] block relative h-[18px] mt-[30px] me-0 mb-[26px] ms-[10px];
-      }
-      span {
-        transition: transform 0.5s ease;
-        @apply h-[2px] w-full bg-slate-900 dark:bg-white block mb-[5px];
-        &:last-child {
-          @apply mb-0;
-        }
-      }
-      &.open {
-        span {
-          @apply absolute;
-          &:first-child {
-            @apply top-[6px] rotate-[45deg];
-          }
-          &:nth-child(2) {
-            @apply invisible;
-          }
-          &:last-child {
-            @apply w-full top-[6px] -rotate-[45deg];
-          }
-          &:hover {
-            @apply bg-primary;
-          }
-        }
-      }
-      &:hover, &:focus,
-      .navigation-menu > li > a:hover {
-        @apply bg-transparent;
-      }
-    }
-    .buy-button {
-      @apply ltr:float-right rtl:float-left leading-[74px];
-      > li {
-        @apply leading-[initial];
-      }
-      .login-btn-primary,
-      .btn-icon-dark {
-        @apply hidden;
-      }
-      .login-btn-light,
-      .btn-icon-light {
-        @apply inline-block;
-      }
-      .search-bar {
-        .menu-search {
-          form {
-            @apply relative;
-          }
-        }
-        .searchform {
-          @apply after:!absolute after:!end-[14px] after:!top-[14px] after:!text-xl after:!leading-5 after:!pointer-events-none;
-          input[type=text] {
-            @apply !shadow-none !py-2.5 !pe-[42px] !ps-3 !h-11 !text-sm !block !outline-none;
-          }
-          input[type=submit] {
-            @apply hidden;
-          }
-          /* &:after {
-            content: "\f0349";
-            font-family: "Material Design Icons";
-          } */
-        }
-      }
-    }
-    .buy-button,
-    .buy-menu-btn {
-      .dropdown {
-        .dropdown-toggle {
-          @apply after:hidden;
-        }
-      }
-    }
-    .navigation-menu {
-      @apply list-none m-0 p-0;
-      > li {
-        @apply ltr:float-left rtl:float-right block relative my-0 mx-[10px];
-        > a {
-          @apply block text-slate-900 dark:text-white text-menu bg-transparent font-medium tracking-[1px] leading-6 font-dm px-[15px];
-          &:hover, 
-          &:active {
-            @apply text-primary;
-          }
-        }
-        &:hover, 
-        &.active{
-          > a {
-            @apply !text-primary dark:!text-primary;
-          }
-        }
-        .submenu.megamenu {
-          li {
-            .megamenu-head {
-              @apply !py-[10px] !px-5 !whitespace-nowrap !text-xs !uppercase !tracking-[0.04em] !font-semibold !text-slate-400;
-            }
-          }
-        }
-        .submenu {
-          li {
-            @apply relative mx-0;
-            a {
-              @apply text-menu;
-            }
-          }
-        }
+
+    .submenu {
+      .submenu-arrow {
+        border-width: 0px 0.125rem 0.125rem 0px;
+        @apply absolute end-[1.25rem] top-[15px] border-black dark:border-black rounded-[0.5px] inline-block p-[2px] ltr:-rotate-[45deg] rtl:rotate-[135deg];
       }
       .has-submenu {
-        .menu-arrow {
-          border-width: 0 2px 2px 0;
-          @apply border-black dark:border-white rounded-[0.5px] inline-block p-[2px] rotate-[45deg] absolute duration-500 end-0 top-[33px];
+        &:hover {
+          > .submenu-arrow { @apply border-primary dark:border-primary; }
+        }
+        .submenu {
+          .has-submenu {
+            &:hover {
+              .submenu-arrow { @apply border-primary dark:border-primary; }
+              > .submenu-arrow { @apply border-primary dark:border-primary; }
+            }
+          }
         }
       }
     }
-    .menu-extras {
-      @apply ltr:float-right rtl:float-left;
+  }
+
+  .navbar-toggle {
+    @apply border-0 relative p-0 m-0 cursor-pointer;
+    .lines { @apply w-[25px] block relative h-[18px] mt-[30px] me-0 mb-[26px] ms-[10px]; }
+    span {
+      transition: transform 0.5s ease;
+      @apply h-[2px] w-full bg-slate-900 dark:bg-white block mb-[5px];
+      &:last-child { @apply mb-0; }
+    }
+    &.open {
+      span {
+        @apply absolute;
+        &:first-child { @apply top-[6px] rotate-[45deg]; }
+        &:nth-child(2) { @apply invisible; }
+        &:last-child { @apply w-full top-[6px] -rotate-[45deg]; }
+        &:hover { @apply bg-primary; }
+      }
+    }
+    &:hover,
+    &:focus,
+    .navigation-menu > li > a:hover {
+      @apply bg-transparent;
+    }
+  }
+
+  .buy-button {
+    @apply ltr:float-right rtl:float-left leading-[74px];
+    > li { @apply leading-[initial]; }
+    .login-btn-primary,
+    .btn-icon-dark { @apply hidden; }
+    .login-btn-light,
+    .btn-icon-light { @apply inline-block; }
+
+    .search-bar {
+      .menu-search {
+        form { @apply relative; }
+      }
+      .searchform {
+        @apply after:!absolute after:!end-[14px] after:!top-[14px] after:!text-xl after:!leading-5 after:!pointer-events-none;
+        input[type=text] {
+          @apply !shadow-none !py-2.5 !pe-[42px] !ps-3 !h-11 !text-sm !block !outline-none;
+        }
+        input[type=submit] { @apply hidden; }
+      }
+    }
+  }
+
+  .buy-button,
+  .buy-menu-btn {
+    .dropdown {
+      .dropdown-toggle { @apply after:hidden; }
+    }
+  }
+
+  .navigation-menu {
+    @apply list-none m-0 p-0;
+    > li {
+      @apply ltr:float-left rtl:float-right block relative my-0 mx-[10px];
+
+      /* ✅ Letras siempre negras (base) */
+      > a {
+        @apply block !text-black dark:!text-black text-menu bg-transparent font-medium tracking-[1px] leading-6 font-dm px-[15px];
+        &:hover,
+        &:active {
+          @apply text-primary;
+        }
+      }
+
+      &:hover,
+      &.active {
+        > a { @apply !text-primary dark:!text-primary; }
+      }
+
+      .submenu.megamenu {
+        li {
+          .megamenu-head {
+            @apply !py-[10px] !px-5 !whitespace-nowrap !text-xs !uppercase !tracking-[0.04em] !font-semibold !text-slate-400;
+          }
+        }
+      }
+
+      .submenu {
+        li {
+          @apply relative mx-0;
+          a { @apply text-menu; }
+        }
+      }
+    }
+
+    .has-submenu {
+      .menu-arrow {
+        border-width: 0 2px 2px 0;
+        @apply border-black dark:border-black rounded-[0.5px] inline-block p-[2px] rotate-[45deg] absolute duration-500 end-0 top-[33px];
+      }
+    }
+  }
+
+  .menu-extras { @apply ltr:float-right rtl:float-left; }
+
+  /* ✅ Scroll: mantener letras negras también */
+  &.scroll {
+    @apply bg-white dark:bg-white border-none shadow;
+    .navigation-menu {
+      > li {
+        > a { @apply !text-black dark:!text-black; }
+        > .menu-arrow { @apply border-black dark:border-black; }
+
+        &:hover,
+        &.active {
+          > a { @apply text-primary; }
+          > .menu-arrow { @apply border-primary dark:border-primary; }
+        }
+      }
+    }
+  }
+
+  &.defaultscroll {
+    &.dark-menubar {
+      .logo { @apply leading-[70px]; }
     }
     &.scroll {
-      @apply bg-white dark:bg-slate-900 border-none shadow;
-      .navigation-menu {
+      .logo { @apply leading-[62px]; }
+    }
+  }
+
+  /* ✅ Sticky: mantener letras negras también */
+  &.nav-sticky {
+    @apply bg-white/80 dark:bg-white/80 backdrop-blur-md shadow-sm dark:shadow-gray-700;
+
+    .navigation-menu {
+      /* si tu HTML usa nav-light, igual lo forzamos */
+      &.nav-light {
         > li {
-          > a {
-            @apply text-slate-900 dark:text-white;
+          > a { @apply !text-black dark:!text-black; }
+
+          &.active {
+            > a { @apply !text-primary dark:!text-primary; }
           }
-          > .menu-arrow {
-            @apply border-black dark:border-white;
+
+          &:hover,
+          &.active {
+            > .menu-arrow { @apply !border-primary; }
+            > a { @apply !text-primary dark:!text-primary; }
           }
-          &:hover, 
-          &.active{
-            > a {
-              @apply text-primary;
-            }
-            > .menu-arrow {
-              @apply border-primary dark:border-primary;
-            }
-          }
+        }
+
+        .has-submenu {
+          .menu-arrow { @apply border-black dark:border-black; }
         }
       }
     }
-    &.defaultscroll{
-      &.dark-menubar {
-        .logo {
-          @apply leading-[70px];
-        }
-      }
-      &.scroll {
-        .logo {
-          @apply leading-[62px];
-        }
-      }
+
+    &.tagline-height { @apply !top-0; }
+
+    .buy-button {
+      .login-btn-primary,
+      .btn-icon-dark { @apply inline-block; }
+      .login-btn-light,
+      .btn-icon-light { @apply hidden; }
     }
-    &.nav-sticky {
-      @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-gray-700;
-      .navigation-menu{
-        &.nav-light {
-          > li {
-            > a {
-              @apply text-slate-900 dark:text-white;
-            }
-            &.active {
-              > a {
-                @apply !text-primary dark:!text-primary;
-              }
-            }
-            &:hover, 
-            &.active{
-              > .menu-arrow {
-                @apply !border-primary;
-              }
-            }
-            
-            &:hover, 
-            &.active {
-              > a {
-                @apply !text-primary dark:!text-primary;
-              }
-            }
-          }
-          .has-submenu {
-            .menu-arrow {
-              @apply border-black dark:border-white;
-            }
-          }
-        }
-      }
-      &.tagline-height {
-        @apply !top-0;
-      }
-      .buy-button {
-        .login-btn-primary,
-        .btn-icon-dark {
-          @apply inline-block;
-        }
-        .login-btn-light,
-        .btn-icon-light {
-          @apply hidden;
-        }
-      }
-      
-      .logo {
-        .l-dark {
-          @apply inline-block;
-        }
-        .l-light {
-          @apply hidden;
-        }
+
+    .logo {
+      .l-dark { @apply inline-block; }
+      .l-light { @apply hidden; }
     }
   }
 }
@@ -282,10 +227,8 @@
   #topnav {
     .navigation-menu {
       > li {
-        .submenu{
-          &.megamenu {
-            @apply !w-[1116px];
-          }
+        .submenu {
+          &.megamenu { @apply !w-[1116px]; }
         }
       }
     }
@@ -296,10 +239,8 @@
   #topnav {
     .navigation-menu {
       > li {
-        .submenu{
-          &.megamenu {
-            @apply !w-[936px];
-          }
+        .submenu {
+          &.megamenu { @apply !w-[936px]; }
         }
       }
     }
@@ -310,131 +251,100 @@
   #topnav {
     .navigation-menu {
       @apply flex flex-wrap justify-center;
+
       > li {
         .submenu {
           transition: all 0.2s ease;
           @apply absolute top-full start-0 z-[1000] py-[15px] px-0 list-none min-w-[180px] invisible opacity-0 mt-[10px] rounded-md bg-white dark:bg-slate-900 shadow-sm dark:shadow-gray-700;
+
           li {
             @apply relative;
             a {
               transition: all 0.3s;
               @apply block py-[10px] px-5 clear-both whitespace-nowrap tracking-[0.04em] font-normal text-slate-900 dark:text-white leading-[17px];
-              &:hover {
-                @apply !text-primary dark:!text-primary;
-              }
+              &:hover { @apply !text-primary dark:!text-primary; }
             }
-            ul {
-              @apply list-none ps-0 m-0;
-            }
+            ul { @apply list-none ps-0 m-0; }
           }
+
           &.megamenu {
             @apply whitespace-nowrap start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2 fixed top-auto flex;
             > li {
               @apply overflow-hidden align-top w-1/5;
-              .submenu {
-                @apply start-full top-0 ms-[10px] -mt-px;
-              }
+              .submenu { @apply start-full top-0 ms-[10px] -mt-px; }
             }
           }
+
           > li {
-            .submenu {
-              @apply start-[101%] top-0 ms-[10px] -mt-px;
-            }
+            .submenu { @apply start-[101%] top-0 ms-[10px] -mt-px; }
           }
         }
-        > a {
-          @apply py-[25px] min-h-[62px];
-        }
+
+        > a { @apply py-[25px] min-h-[62px]; }
+
         &:hover {
-          > .menu-arrow {
-            @apply border-primary dark:border-primary;
-          }
+          > .menu-arrow { @apply border-primary dark:border-primary; }
         }
-        &:hover, 
-        &.active{
-          > a {
-            @apply !text-primary dark:!text-primary;
-          }
+
+        &:hover,
+        &.active {
+          > a { @apply !text-primary dark:!text-primary; }
         }
-        &.last-elements{
+
+        &.last-elements {
           .submenu {
             @apply start-auto end-0 before:start-auto before:end-[10px];
-            > li{
+            > li {
               &.has-submenu {
-                .submenu {
-                  @apply start-auto end-full ms-0 me-[10px];
-                }
+                .submenu { @apply start-auto end-full ms-0 me-[10px]; }
               }
             }
           }
         }
       }
+
+      /* ✅ nav-light (desktop): forzar negro en vez de blanco */
       &.nav-light {
         > li {
-          > a {
-            @apply text-white/50;
-          }
-          &.active {
-            > a {
-              @apply !text-white;
-            }
-          }
+          > a { @apply !text-black; }
+          &.active { > a { @apply !text-primary; } }
           &:hover {
-            > .menu-arrow {
-              @apply !border-white;
-            }
-            > a {
-              @apply !text-white;
-            }
+            > .menu-arrow { @apply !border-primary; }
+            > a { @apply !text-primary; }
           }
         }
         .has-submenu {
-          .menu-arrow {
-            @apply border-white/50;
-          }
+          .menu-arrow { @apply border-black; }
           &.active {
-            .menu-arrow {
-              @apply !border-white;
-            }
+            .menu-arrow { @apply !border-primary; }
           }
         }
       }
+
       &.justify-end {
         > li {
-          &:last-child {
-            @apply !me-0;
-            /* a {
-              @apply !pe-0;
-            } */
-          }
+          &:last-child { @apply !me-0; }
         }
       }
     }
-    .buy-button {
-      @apply ps-[15px] ms-[15px];
-    }
-    .navbar-toggle {
-      @apply hidden;
-    }
-    #navigation {
-      @apply !block;
-    }
+
+    .buy-button { @apply ps-[15px] ms-[15px]; }
+    .navbar-toggle { @apply hidden; }
+    #navigation { @apply !block; }
+
     &.scroll {
       @apply top-0;
       .navigation-menu {
         > li {
-          > a {
-            @apply py-5;
-          }
+          > a { @apply py-5; }
         }
       }
     }
+
     &.scroll-active {
       .navigation-menu {
         > li {
-          > a {
-            @apply py-[25px];
-          }
+          > a { @apply py-[25px]; }
         }
       }
     }
@@ -444,62 +354,56 @@
 @media (max-width: 991px) {
   #topnav {
     @apply bg-white dark:bg-slate-900 shadow-sm dark:shadow-gray-700 min-h-[74px];
+
     .logo {
-      .l-dark {
-        @apply !inline-block;
-      }
-      .l-light {
-        @apply !hidden;
-      }
+      .l-dark { @apply !inline-block; }
+      .l-light { @apply !hidden; }
     }
-    .container {
-      @apply w-auto;
-    }
-    #navigation {
-      @apply max-h-[400px] shadow;
-    }
+
+    .container { @apply w-auto; }
+    #navigation { @apply max-h-[400px] shadow; }
+
     .navigation-menu {
       @apply !float-none;
+
       > li {
         @apply !float-none;
+
         .submenu {
           @apply hidden list-none ps-5 m-0;
           li {
             a {
               transition: all 0.3s;
-              @apply !block !relative !py-[7px] !px-[15px] !tracking-[0.04em] !text-slate-900 dark:!text-white;
+              /* ✅ mobile: negro siempre */
+              @apply !block !relative !py-[7px] !px-[15px] !tracking-[0.04em] !text-black dark:!text-black;
             }
           }
+
           &.megamenu {
             li {
-              .megamenu-head {
-                @apply py-[7px] px-[15px];
-              }
+              .megamenu-head { @apply py-[7px] px-[15px]; }
             }
             > li {
               > ul {
                 @apply list-none ps-0;
                 > li {
-                  > span {
-                    @apply block relative py-[10px] px-[15px] uppercase text-xs tracking-[2px] text-slate-200;
-                  }
+                  > span { @apply block relative py-[10px] px-[15px] uppercase text-xs tracking-[2px] text-slate-200; }
                 }
               }
             }
           }
-          &.open {
-            @apply block;
-          }
+
+          &.open { @apply block; }
+
           .submenu {
             @apply hidden list-none;
-            &.open {
-              @apply block;
-            }
+            &.open { @apply block; }
           }
         }
-        > a {
-          @apply text-slate-900 dark:text-white py-[10px] px-[20px] after:absolute after:end-[15px];
-        }
+
+        /* ✅ mobile: negro siempre */
+        > a { @apply !text-black dark:!text-black py-[10px] px-[20px] after:absolute after:end-[15px]; }
+
         > a:hover,
         .submenu li a:hover,
         &.has-submenu.open > a {
@@ -507,44 +411,33 @@
         }
       }
     }
+
     .menu-extras {
-      .menu-item {
-        @apply border-gray-200 dark:border-gray-700;
-      }
+      .menu-item { @apply border-gray-200 dark:border-gray-700; }
     }
-    .navbar-header {
-      @apply ltr:float-left rtl:float-right;
-    }
+
+    .navbar-header { @apply ltr:float-left rtl:float-right; }
 
     .buy-button {
       .login-btn-primary,
-      .btn-icon-dark {
-        @apply !inline-block;
-      }
+      .btn-icon-dark { @apply !inline-block; }
       .login-btn-light,
-      .btn-icon-light {
-        @apply hidden;
-      }
+      .btn-icon-light { @apply hidden; }
     }
+
     .has-submenu {
       .submenu {
-        .submenu-arrow {
-          @apply rotate-[45deg] absolute end-5 top-3;
-        }
+        .submenu-arrow { @apply rotate-[45deg] absolute end-5 top-3; }
       }
       &.active {
-        a {
-          @apply text-primary;
-        }
+        a { @apply text-primary; }
       }
     }
   }
-  
+
   #navigation {
     @apply absolute top-[74px] start-0 w-full hidden h-auto bg-white dark:bg-slate-900 overflow-auto;
-    &.open {
-      @apply block overflow-y-auto;
-    }
+    &.open { @apply block overflow-y-auto; }
   }
 }
 
@@ -552,9 +445,7 @@
   #topnav {
     .navigation-menu {
       .has-submenu {
-        .menu-arrow {
-          @apply end-2 top-4;
-        }
+        .menu-arrow { @apply end-2 top-4; }
       }
     }
   }
@@ -563,21 +454,19 @@
 @media (min-width: 768px) {
   #topnav {
     .navigation-menu {
-      > li{
-        &.has-submenu{
+      > li {
+        &.has-submenu {
           &:hover {
             > .submenu {
               @apply visible opacity-100 mt-0;
-              > li{
-                &.has-submenu{
+              > li {
+                &.has-submenu {
                   &:hover {
                     > .submenu {
                       @apply visible opacity-100 ms-0 me-0;
-                      > li{
+                      > li {
                         &:hover {
-                          > .submenu {
-                            @apply visible opacity-100 ms-0 me-0;
-                          }
+                          > .submenu { @apply visible opacity-100 ms-0 me-0; }
                         }
                       }
                     }
@@ -590,9 +479,7 @@
       }
     }
   }
-  .navbar-toggle {
-    @apply block;
-  }
+  .navbar-toggle { @apply block; }
 }
 
 @media (max-width: 425px) {
@@ -600,63 +487,54 @@
     .buy-menu-btn {
       @apply !block !my-0 !mx-[10px] !py-[10px] !px-5;
       .dropdown {
-        .dropdown-menu{
-          &.show {
-            transform: translate3d(0px, -54px, 0px) !important;
-          }
+        .dropdown-menu {
+          &.show { transform: translate3d(0px, -54px, 0px) !important; }
         }
       }
     }
   }
 }
+
 .tagline {
-    @apply absolute w-full z-[99] text-sm py-[13px] px-0;
+  @apply absolute w-full z-[99] text-sm py-[13px] px-0;
 }
+
 @media screen and (max-width: 575px) {
-    .tagline {
-        @apply hidden;
-    }
-    .tagline-height {
-        @apply !top-0; 
-    }
+  .tagline { @apply hidden; }
+  .tagline-height { @apply !top-0; }
 }
+
 @media (min-width: 576px) {
-  .tagline-height {
-    @apply !top-[46px];
-  }
+  .tagline-height { @apply !top-[46px]; }
 }
-  
+
 .sidebar-nav {
-    @apply py-[15px] px-0;
-        > .navbar-item {
-          @apply py-[3px] px-[15px];
-          .navbar-link {
-            @apply text-menu font-semibold;
-            &.active{
-              @apply text-primary;
-            }
-            .navbar-icon {
-              @apply text-lg me-[6px];
-            }
-          }
-          &:hover,
-          &.active {
-            .navbar-link {
-              @apply text-primary;
-            }
-          }
+  @apply py-[15px] px-0;
+
+  > .navbar-item {
+    @apply py-[3px] px-[15px];
+
+    .navbar-link {
+      @apply text-menu font-semibold;
+      &.active { @apply text-primary; }
+
+      .navbar-icon { @apply text-lg me-[6px]; }
     }
-    li{
-      &.active {
-        a {
-          @apply text-primary;
-        }
-      }
-      &.account-menu.active,
-      &.account-menu:hover{
-        .navbar-link {
-          @apply !bg-primary !text-white dark:!text-slate-900;
-        }
-      }
+
+    &:hover,
+    &.active {
+      .navbar-link { @apply text-primary; }
     }
+  }
+
+  li {
+    &.active {
+      a { @apply text-primary; }
+    }
+
+    &.account-menu.active,
+    &.account-menu:hover {
+      .navbar-link { @apply !bg-primary !text-white dark:!text-slate-900; }
+    }
+  }
 }
