@@ -1,22 +1,17 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-import bg from "../../assets/images/bg/video.jpg";
-import map from "../../assets/images/map.png";
 
 import NavLight from "../../components/navbar/nav-light";
-import BrandLogo from "../../components/brand-logo";
 import BlogOne from "../../components/blog-one";
 import Team from "../../components/team";
 import ClientOne from "../../components/client-one";
 import Faq from "../../components/faq";
 import Project from "../../components/project";
 import AboutOne from "../../components/about-one";
-import CounterTwo from "../../components/counter-two";
 import ServiceThree from "../../components/service-three";
 import Footer from "../../components/footer";
 
-import CountUp from "react-countup";
 
 export default function IndexThree() {
   const [isOpen, setOpen] = useState<boolean>(false);
