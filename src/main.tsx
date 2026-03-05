@@ -1,10 +1,10 @@
 import { createRoot } from 'react-dom/client'
 import './assets/css/tailwind.css'
 import App from './App.tsx'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')!).render(
-  <BrowserRouter basename='/AIRIX'>
+  <HashRouter>
     <App />
-  </BrowserRouter>,
+  </HashRouter>
 )
