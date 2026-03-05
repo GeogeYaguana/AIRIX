@@ -5,7 +5,6 @@ import bg from '../../assets/images/bg/1.jpg'
 
 import NavLight from '../../components/navbar/nav-light'
 import Accordion from '../../components/accordion'
-import GetInTouch from '../../components/get-in-touch'
 import Footer from '../../components/footer'
 
 export default function Faqs() {
