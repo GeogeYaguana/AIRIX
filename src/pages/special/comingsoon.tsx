@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import logo from '../../assets/images/logo-icon-64.png'
+import logo from '../../assets/images/logo-icon-64.ico'
 import bg from '../../assets/images/bg/2.jpg'
 
 export default function Comingsoon() {
@@ -10,7 +10,7 @@ export default function Comingsoon() {
     let [minutes,setMinutes] = useState<number>();
     let [seconds,setSeconds] = useState<number>();
 
-    let deadline = "December, 31, 2025";
+    let deadline = "March, 31, 2026";
   
     let getTime = (deadline: string) => {
       let time = Date.parse(deadline) - Date.now();
@@ -36,8 +36,10 @@ export default function Comingsoon() {
                             <Link to="/"><img src={logo} className="mx-auto" alt=""/></Link>
                         </div>
                         <div className="title-heading text-center my-auto">
-                            <h1 className="text-white mt-3 mb-6 md:text-5xl text-3xl font-bold">We Are Coming Soon...</h1>
-                            <p className="text-white/70 text-lg max-w-xl mx-auto">Join Greenoza to lead the future of renewable energy with innovative solar solutions. Contribute to sustainability and professional growth.</p>
+                            <h1 className="text-white mt-3 mb-6 md:text-5xl text-3xl font-bold"> Airix Platform Launching Soon</h1>
+                            <p className="text-white/70 text-lg max-w-xl mx-auto">  Airix is building intelligent tools for precision agriculture,
+                                combining AI, satellite imagery, and predictive analytics
+                                to help farmers monitor crops and improve productivity.</p>
                         
                             <div id="countdown">
                                 <ul className="count-down list-none inline-block text-white text-center mt-8 m-6">
@@ -49,9 +51,9 @@ export default function Comingsoon() {
                                 </ul>
                             </div>
                         </div>
-                        <div className="text-center">
+                        {/* <div className="text-center">
                             <p className="mb-0 text-slate-400">© {new Date().getFullYear()} Greenoza. Design & Develop with <i className="ri-heart-fill text-red-600"></i> by <Link to="https://shreethemes.in/" target="_blank" className="text-reset">Shreethemes</Link>.</p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

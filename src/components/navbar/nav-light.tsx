@@ -9,7 +9,6 @@ export default function NavLight() {
     let [toggle, setToggle] = useState<boolean>(false);
     let [modal, setModal] = useState<boolean>(false);
     let [manu, setManu] = useState<string>('');
-    let [subManu, setSubManu] = useState<string>('');
 
     const loction = useLocation()
 
@@ -74,36 +73,27 @@ export default function NavLight() {
                         }                    
                     </li>
     
-                    <li className="inline-block relative">
-                        <Link to="/contactus" className="h-10 px-4 tracking-wide items-center justify-center font-medium rounded-md bg-primary text-white hidden md:inline-flex">Get in touch !</Link>
-                        <Link to="/contactus" className="size-8 items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-md bg-primary text-white md:hidden inline-flex"><i className="ri-phone-line"></i></Link>
-                    </li>
                 </ul>
 
                 <div id="navigation" style={{display: toggle ? 'block' : 'none'}}>
                     <ul className="navigation-menu !justify-end nav-light">
                         <li className={`has-submenu parent-parent-menu-item ${['/','/index-two','/index-three','/index-four'].includes(manu) ? 'active' : ''}`}>
-                            <Link to="#" onClick={()=>setSubManu(subManu === 'home-page' ? '' : 'home-page')}>Home</Link><span className="menu-arrow"></span>
-                            <ul className={`submenu ${['home-page'].includes(subManu) ? 'open' : ''}`}>
-                                <li className={`${manu === '/' ? 'active' : ''}`}><Link to="/" className="sub-menu-item">Hero One</Link></li>
-                                <li className={`${manu === '/index-two' ? 'active' : ''}`}><Link to="/index-two" className="sub-menu-item">Hero Two</Link></li>
-                                <li className={`${manu === '/index-three' ? 'active' : ''}`}><Link to="/index-three" className="sub-menu-item">Hero Three</Link></li>
-                                <li className={`${manu === '/index-four' ? 'active' : ''}`}><Link to="/index-four" className="sub-menu-item">Hero Four</Link></li>
-                            </ul>
+                            <Link to="/" >Home</Link>
+                
                         </li>
 
                         <li className={`${manu === '/aboutus' ? 'active' : ''}`}><Link to="/aboutus" className="sub-menu-item">About Us</Link></li>
 
                         <li className={`${manu === '/services' ? 'active' : ''}`}><Link to="/services" className="sub-menu-item">Services</Link></li>
-
+{/*
                         <li className={`has-submenu parent-parent-menu-item ${['/projects','/project-detail'].includes(manu)? 'active' : ''}`}>
                             <Link to="#" onClick={()=>setSubManu(subManu === 'project' ? '' : 'project')}>Projects</Link><span className="menu-arrow"></span>
                             <ul className={`submenu ${['project'].includes(subManu) ? 'open' : ''}`}>
                                 <li className={`${manu === '/projects' ? 'active' : ''}`}><Link to="/projects" className="sub-menu-item">Projects</Link></li>
                                 <li className={`${manu === '/project-detail' ? 'active' : ''}`}><Link to="/project-detail" className="sub-menu-item">Project Detail</Link></li>
                             </ul>
-                        </li>
-
+                        </li>*/}
+{/*
                         <li className={`has-submenu parent-parent-menu-item ${['/pricing','/team','/faqs','/blogs','/blog-detail','/terms','/privacy','/contactus'].includes(manu) ? 'active' : ''}`}>
                             <Link to="#" onClick={()=>setSubManu(subManu === 'inner-page' ? '' : 'inner-page')}>Pages</Link><span className="menu-arrow"></span>
                             <ul className={`submenu ${['inner-page','blog','auth','special','utility'].includes(subManu) ? 'open' : ''}`}>
@@ -138,7 +128,7 @@ export default function NavLight() {
                                 </li>
                                 <li className={`${manu === '/contactus' ? 'active' : ''}`}><Link to="/contactus" className="sub-menu-item">Contact Us</Link></li>
                             </ul>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </div>

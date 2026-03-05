@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import about2 from "../assets/images/2.jpg";
 
 export default function AboutOne() {
@@ -64,14 +63,14 @@ export default function AboutOne() {
               </ul>
             </div>
 
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <Link
                 to="#"
                 className="h-10 px-5 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-primary/10 hover:bg-primary text-primary hover:text-white transition-all duration-300"
               >
                 Learn More <i className="ri-arrow-right-line align-middle ms-1"></i>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -40,10 +40,10 @@ export default function Faqs() {
                     <div className="lg:col-span-4 md:col-span-5">
                         <div className="rounded-md shadow-sm dark:shadow-gray-700 p-6 sticky top-20">
                             <ul className="list-unstyled sidebar-nav mb-0 !py-0" id="navmenu-nav">
-                                <li className="navbar-item !p-0"><Link1 to="tech" activeClass="active" spy={true} smooth={true} duration={500}  className="text-base font-medium navbar-link">Buying Questions</Link1></li>
+                                {/* <li className="navbar-item !p-0"><Link1 to="tech" activeClass="active" spy={true} smooth={true} duration={500}  className="text-base font-medium navbar-link">Buying Questions</Link1></li> */}
                                 <li className="navbar-item mt-3 !p-0"><Link1 to="general" activeClass="active" spy={true} smooth={true} duration={500} className="text-base font-medium navbar-link">General Questions</Link1></li>
-                                <li className="navbar-item mt-3 !p-0"><Link1 to="payment" activeClass="active" spy={true} smooth={true} duration={500} className="text-base font-medium navbar-link">Payments Questions</Link1></li>
-                                <li className="navbar-item mt-3 !p-0"><Link1 to="support" activeClass="active" spy={true} smooth={true} duration={500} className="text-base font-medium navbar-link">Support Questions</Link1></li>
+                                {/* <li className="navbar-item mt-3 !p-0"><Link1 to="payment" activeClass="active" spy={true} smooth={true} duration={500} className="text-base font-medium navbar-link">Payments Questions</Link1></li> */}
+                                {/* <li className="navbar-item mt-3 !p-0"><Link1 to="support" activeClass="active" spy={true} smooth={true} duration={500} className="text-base font-medium navbar-link">Support Questions</Link1></li> */}
                             </ul>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ export default function Faqs() {
                             <Accordion/>
                         </div>
 
-                        <div id="general" className="mt-6">
+                        {/* <div id="general" className="mt-6">
                             <h5 className="text-xl font-semibold">General Questions</h5>
                             <Accordion/>
                         </div>
@@ -67,11 +67,11 @@ export default function Faqs() {
                         <div id="support" className="mt-6">
                             <h5 className="text-xl font-semibold">Support Questions</h5>
                             <Accordion/>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
-           <GetInTouch/>
+           {/* <GetInTouch/> */}
         </section>
         <Footer/>
     </>

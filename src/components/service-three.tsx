@@ -24,9 +24,9 @@ export default function ServiceThree() {
                             <Link to="#" className="text-lg dark:text-white duration-500 ease-in-out font-semibold group-hover:text-white">{item.title}</Link>
                             <p className="text-slate-400 group-hover:text-white/60 mt-3 duration-500">{item.desc}</p>
                             
-                            <div className="mt-3">
+                            {/* <div className="mt-3">
                                 <Link to="#" className="group-hover:text-white duration-500">Read More <i className="ri-arrow-right-line"></i></Link>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 ))}

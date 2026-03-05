@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import bg from '../../assets/images/bg/1.jpg'
-import bg2 from '../../assets/images/bg/4.jpg'
+import bg from '../../assets/images/bg/about_us.jpg'
+import bg2 from '../../assets/images/bg/about_us_2.jpg'
 
 import NavLight from "../../components/navbar/nav-light";
 import AboutOne from "../../components/about-one";
@@ -16,13 +16,13 @@ export default function AboutUs() {
     <>
         <NavLight/>   
 
-        <section className="relative table w-full py-32 lg:py-44 bg-no-repeat bg-center bg-cover" style={{backgroundImage:`url(${bg})`}}>
+        <section className="relative table w-full py-32 lg:py-44 bg-no-repeat bg-center bg-cover" style={{backgroundImage:`url(${bg})`, backgroundPosition: `top center`}}>
             <div className="absolute inset-0 bg-slate-900/50"></div>
             <div className="container relative">
                 <div className="grid grid-cols-1 mt-10">
                     <h3 className="md:text-4xl text-3xl md:leading-normal leading-normal font-semibold text-white">About Us</h3>
                     <ul className="tracking-[0.5px] mb-0 inline-block mt-4">
-                        <li className="inline-block font-medium duration-500 ease-in-out text-white/80 hover:text-white"><Link to="/">Greenoza</Link></li>
+                        <li className="inline-block font-medium duration-500 ease-in-out text-white/80 hover:text-white"><Link to="/">Airix</Link></li>
                         <li className="inline-block text-base text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180"><i className="ri-arrow-right-s-line"></i></li>
                         <li className="inline-block font-medium duration-500 ease-in-out text-white" aria-current="page">About Us</li>
                     </ul>

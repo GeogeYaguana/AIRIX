@@ -15,7 +15,7 @@ export default function BlogOne() {
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-6">
             {blogData.slice(0,3).map((item:BlogData,index:number)=>( 
                 <div className="group relative h-fit overflow-hidden bg-white dark:bg-slate-900 rounded-md shadow-sm dark:shadow-gray-700 duration-500" key={index}>
-                    <div className="relative overflow-hidden">
+                    <div className="relative h-120 overflow-hidden">
                         <img src={item.image} className="group-hover:scale-105 duration-500" alt=""/>
                         
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900 opacity-0 group-hover:opacity-100 duration-500"></div>

@@ -1,10 +1,8 @@
 import { Route, Routes } from 'react-router-dom'
-import IndexOne from './pages/index/index-one'
 import IndexTwo from './pages/index/index-two'
 import IndexThree from './pages/index/index-three'
 import IndexFour from './pages/index/index-four'
 import AboutUs from './pages/inner-pages/about-us'
-import Services from './pages/inner-pages/services'
 import Project from './pages/projects/projects'
 import ProjectDetail from './pages/projects/project-detail'
 import Pricing from './pages/inner-pages/pricing'
@@ -22,18 +20,17 @@ import Terms from './pages/utility/terms'
 import Privacy from './pages/utility/privacy'
 import Contactus from './pages/inner-pages/contactus'
 import Switcher from './components/switcher'
-
 function App() {
 
   return (
     <>
       <Routes>
-        <Route path='/' element={<IndexOne/>}/>
+        <Route path='/' element={<IndexThree/>}/>
         <Route path='/index-two' element={<IndexTwo/>}/>
         <Route path='/index-three' element={<IndexThree/>}/>
         <Route path='/index-four' element={<IndexFour/>}/>
         <Route path='/aboutus' element={<AboutUs/>}/>
-        <Route path='/services' element={<Services/>}/>
+        <Route path='/services' element={<Comingsoon/>}/>
         <Route path='/projects' element={<Project/>}/>
         <Route path='/project-detail' element={<ProjectDetail/>}/>
         <Route path='/project-detail/:id' element={<ProjectDetail/>}/>

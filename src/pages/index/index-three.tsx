@@ -1,17 +1,14 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
 
 
 import NavLight from "../../components/navbar/nav-light";
-import BlogOne from "../../components/blog-one";
-import Team from "../../components/team";
-import ClientOne from "../../components/client-one";
+
 import Faq from "../../components/faq";
 import Project from "../../components/project";
 import AboutOne from "../../components/about-one";
 import ServiceThree from "../../components/service-three";
 import Footer from "../../components/footer";
-
+import fondoVideo from "../../assets/images/fondo.mp4"
 
 export default function IndexThree() {
   const [isOpen, setOpen] = useState<boolean>(false);
@@ -23,13 +20,17 @@ export default function IndexThree() {
    <section className="relative min-h-screen w-full overflow-hidden flex items-center">
         {/* Video Background (cover-like, prevents side gaps) */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <iframe
-                src="https://www.youtube.com/embed/ue5-yGL0YnQ?autoplay=1&mute=1&controls=0&loop=1&playlist=ue5-yGL0YnQ"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                            min-w-full min-h-full w-auto h-auto scale-125"
-                allow="autoplay; fullscreen"
-                title="Airix hero video"
-            />
+          <video
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                      min-w-full min-h-full w-auto h-auto scale-100"
+            autoPlay
+            muted
+            loop
+            playsInline
+            
+          >
+            <source src={fondoVideo} type="video/mp4" />
+          </video>
         </div>
 
         {/* Dark Overlay */}
@@ -50,7 +51,7 @@ export default function IndexThree() {
                 and protect your harvest.
             </p>
 
-            <div className="mt-8">
+            {/* <div className="mt-8">
                 <Link
                 to=""
                 className="h-12 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-primary text-white"
@@ -58,7 +59,7 @@ export default function IndexThree() {
                 See How It Works{" "}
                 <i className="ri-arrow-right-line align-middle ms-1"></i>
                 </Link>
-            </div>
+            </div> */}
             </div>
         </div>
     </section>
@@ -132,7 +133,7 @@ export default function IndexThree() {
           <Faq />
         </div>
 
-        <div className="container relative md:mt-24 mt-16">
+       {/* <div className="container relative md:mt-24 mt-16">
           <div className="grid md:grid-cols-12 grid-cols-1 gap-6 items-center">
             <div className="lg:col-span-5 md:col-span-4">
               <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">
@@ -147,23 +148,10 @@ export default function IndexThree() {
 
             <ClientOne />
           </div>
-        </div>
+        </div> */}
 
-        <div className="container relative lg:mt-24 mt-16">
-          <div className="grid grid-cols-1 pb-6 text-center">
-            <h4 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">
-              The Team Behind Airix
-            </h4>
-            <p className="text-slate-400 max-w-xl mx-auto">
-              We combine agronomy and applied AI to build tools that work in
-              real field conditions—simple, reliable, and scalable.
-            </p>
-          </div>
 
-          <Team />
-        </div>
-
-        <div className="container relative lg:mt-24 mt-16">
+       {/* <div className="container relative lg:mt-24 mt-16">
           <div className="grid grid-cols-1 pb-6 text-center">
             <h4 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">
               Updates, Research & Field Notes
@@ -174,8 +162,8 @@ export default function IndexThree() {
             </p>
           </div>
           <BlogOne />
-        </div>
-      </section>
+        </div>*/}
+      </section> 
 
       <Footer />
 

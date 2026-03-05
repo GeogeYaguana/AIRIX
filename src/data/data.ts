@@ -277,22 +277,22 @@ export const footerLinkTwo = [
         link:'/services',
         name:'Services'
     },
-    {
-        link:'/projects',
-        name:'Projects'
-    },
-    {
-        link:'/blogs',
-        name:'Blogs'
-    },
-    {
-        link:'/pricing',
-        name:'Pricing'
-    },
-    {
-        link:'/team',
-        name:'Team'
-    },
+    // {
+    //     link:'/projects',
+    //     name:'Projects'
+    // },
+    // {
+    //     link:'/blogs',
+    //     name:'Blogs'
+    // },
+    // {
+    //     link:'/pricing',
+    //     name:'Pricing'
+    // },
+    // {
+    //     link:'/team',
+    //     name:'Team'
+    // },
     {
         link:'/faqs',
         name:'FAQs'
@@ -337,46 +337,57 @@ export const footerSocial = [
 export const teamData = [
     {
         image:team1,
-        name:'Ramon Gibson',
-        position:'C.E.O.',
-        social:['ri-facebook-circle-line','ri-instagram-line','ri-linkedin-line']
+        name:'Jefferson Ramirez',
+        position:'Leader of Project',
+        social:['ri-linkedin-line'],
+        link_lk: "https://www.linkedin.com/in/jeffaprende/"
     },
     {
         image:team2,
-        name:'Megan Cade',
+        name:'Juan Sarteros',
         position:'Engineer',
-        social:['ri-facebook-circle-line','ri-instagram-line','ri-linkedin-line']
+        social:['ri-linkedin-line'],
+        link_lk: "https://www.linkedin.com/in/juan-marcos-saeteros-macias/"
+
     },
     {
         image:team3,
-        name:'Stella Robinson',
+        name:'Erick Mendoza',
         position:'Engineer',
-        social:['ri-facebook-circle-line','ri-instagram-line','ri-linkedin-line']
+        social:['ri-linkedin-line'],
+        link_lk: "https://www.linkedin.com/in/jeffaprende/"
+
     },
     {
         image:team4,
-        name:'Paul Phelan',
+        name:'Rolando Mendieta',
         position:'Engineer',
-        social:['ri-facebook-circle-line','ri-instagram-line','ri-linkedin-line']
+        social:['ri-linkedin-line'],
+        link_lk: "https://www.linkedin.com/in/rolando-mendieta/"
+
     },
     {
         image:team5,
-        name:'Nancy Hall',
+        name:'Joshua Vallejo',
         position:'Engineer',
-        social:['ri-facebook-circle-line','ri-instagram-line','ri-linkedin-line']
+        social:['ri-linkedin-line'],
+        link_lk: "https://www.linkedin.com/in/jeffaprende/"
+
     },
     {
         image:team6,
-        name:'Wendy Buckley',
+        name:'George Yaguana',
         position:'Engineer',
-        social:['ri-facebook-circle-line','ri-instagram-line','ri-linkedin-line']
+        social:['ri-linkedin-line'],
+        link_lk: "https://www.linkedin.com/in/jeffaprende/"
+
     },
 ]
 export const blogData = [
     {
         id:1,
         image:blog1,
-        date:'13th Sept 2025',
+        date:'2 March 2026',
         time:'5 Min',
         title:'Circularity drives sustainability and profitability for businesses',
         tag:['Solar','Renewable']

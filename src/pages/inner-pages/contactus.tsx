@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom'
 
-import NavDark from '../../components/navbar/nav-dark'
+import NavLight from "../../components/navbar/nav-light"; 
 import Footer from "../../components/footer";
 
 import contact from '../../assets/images/contact.svg'
@@ -10,7 +10,7 @@ export default function Contactus() {
     const [isOpen, setOpen] = useState<boolean>(false)
   return (
     <>
-        <NavDark/>
+        <NavLight/>
 
         <div className="container-fluid relative mt-20">
             <div className="grid grid-cols-1">
