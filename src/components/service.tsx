@@ -21,9 +21,9 @@ export default function Service() {
                         <Link to="#" className="text-lg hover:text-primary dark:text-white dark:hover:text-primary duration-500 ease-in-out font-semibold">{item.title}</Link>
                         <p className="text-slate-400 mt-3">{item.desc}</p>
 
-                        <div className="mt-3">
+                        {/* <div className="mt-3">
                             <Link to="#" className="hover:text-primary dark:hover:text-primary dark:text-white duration-500">Read More <i className="ri-arrow-right-line"></i></Link>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             ))}

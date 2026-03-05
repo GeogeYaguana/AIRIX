@@ -7,8 +7,6 @@ import AboutOne from "../../components/about-one";
 import Service from "../../components/service";
 import CtaOne from "../../components/cta-one";
 import Faq from "../../components/faq";
-import Team from "../../components/team";
-import GetInTouch from "../../components/get-in-touch";
 import Footer from "../../components/footer";
 
 export default function AboutUs() {
@@ -54,17 +52,17 @@ export default function AboutUs() {
         <CtaOne bg={bg2}/>
 
         <section className="relative lg:py-24 py-16">
-            <div className="container relative">
+            {/* <div className="container relative">
                 <div className="grid grid-cols-1 pb-6 text-center">
                     <h4 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Meet the Masters of Solar Energy</h4>
                     <p className="text-slate-400 max-w-xl mx-auto">Join Greenoza to lead the future of renewable energy with innovative solar solutions. Contribute to sustainability and professional growth.</p>
                 </div>
                 <Team/>
-            </div>
+            </div> */}
             <div className="container relative md:mt-24 mt-16">
                 <Faq/>
             </div>
-           <GetInTouch/>
+           {/* <GetInTouch/> */}
         </section>
 
         <Footer/>
