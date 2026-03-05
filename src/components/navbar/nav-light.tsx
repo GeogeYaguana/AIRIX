@@ -50,7 +50,7 @@ export default function NavLight() {
                     </div>
                 </div>
 
-                <ul className="buy-button list-none mb-0">
+                {/* <ul className="buy-button list-none mb-0">
                     <li className="inline-block relative me-1">
                         <button className="text-[20px]" type="button" onClick={()=>setModal(!modal)}>
                             <i className="ri-search-line login-btn-primary"></i>
@@ -73,18 +73,18 @@ export default function NavLight() {
                         }                    
                     </li>
     
-                </ul>
+                </ul> */}
 
                 <div id="navigation" style={{display: toggle ? 'block' : 'none'}}>
                     <ul className="navigation-menu !justify-end nav-light">
-                        <li className={`has-submenu parent-parent-menu-item ${['/','/index-two','/index-three','/index-four'].includes(manu) ? 'active' : ''}`}>
+                        {/* <li className={`has-submenu parent-parent-menu-item ${['/','/index-two','/index-three','/index-four'].includes(manu) ? 'active' : ''}`}>
                             <Link to="/" >Home</Link>
                 
-                        </li>
+                        </li> */}
 
-                        <li className={`${manu === '/aboutus' ? 'active' : ''}`}><Link to="/aboutus" className="sub-menu-item">About Us</Link></li>
+                        {/* <li className={`${manu === '/aboutus' ? 'active' : ''}`}><Link to="/aboutus" className="sub-menu-item">About Us</Link></li> */}
 
-                        <li className={`${manu === '/services' ? 'active' : ''}`}><Link to="/services" className="sub-menu-item">Services</Link></li>
+                        {/* <li className={`${manu === '/services' ? 'active' : ''}`}><Link to="/services" className="sub-menu-item">Services</Link></li> */}
 {/*
                         <li className={`has-submenu parent-parent-menu-item ${['/projects','/project-detail'].includes(manu)? 'active' : ''}`}>
                             <Link to="#" onClick={()=>setSubManu(subManu === 'project' ? '' : 'project')}>Projects</Link><span className="menu-arrow"></span>
