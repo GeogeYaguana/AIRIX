@@ -7,7 +7,7 @@ import logoLight from '../../assets/images/logo-light.png'
 export default function NavLight() {
     let [scroll, setScroll] = useState<boolean>(false);
     let [toggle, setToggle] = useState<boolean>(false);
-    let [modal, setModal] = useState<boolean>(false);
+    //let [modal, setModal] = useState<boolean>(false);
     let [manu, setManu] = useState<string>('');
 
     const loction = useLocation()
@@ -77,10 +77,10 @@ export default function NavLight() {
 
                 <div id="navigation" style={{display: toggle ? 'block' : 'none'}}>
                     <ul className="navigation-menu !justify-end nav-light">
-                        {/* <li className={`has-submenu parent-parent-menu-item ${['/','/index-two','/index-three','/index-four'].includes(manu) ? 'active' : ''}`}>
-                            <Link to="/" >Home</Link>
+                        <li className={`has-submenu parent-parent-menu-item ${['/','/index-two','/index-three','/index-four'].includes(manu) ? 'active' : ''}`}>
+                            {/* <Link to="/" >Home</Link> */}
                 
-                        </li> */}
+                        </li>
 
                         {/* <li className={`${manu === '/aboutus' ? 'active' : ''}`}><Link to="/aboutus" className="sub-menu-item">About Us</Link></li> */}
 

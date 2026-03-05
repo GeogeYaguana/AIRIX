@@ -34,7 +34,7 @@ export default function IndexThree() {
         </div>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-slate-900/70 z-10" />
+        <div className="absolute inset-0 bg-slate-800/70 z-10" />
 
         {/* Content */}
         <div className="container relative z-20">
