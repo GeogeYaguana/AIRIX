@@ -1,6 +1,7 @@
 import blog1 from '../assets/images/blogs/1.jpg'
 import blog2 from '../assets/images/blogs/2.jpg'
- import blog4 from '../assets/images/blogs/4.jpg'
+import blog3 from '../assets/images/blogs/3.jpg'
+import blog4 from '../assets/images/blogs/4.jpg'
 import blog5 from '../assets/images/blogs/5.jpg'
 import blog6 from '../assets/images/blogs/6.jpg'
 import blog7 from '../assets/images/blogs/7.jpg'
