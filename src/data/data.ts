@@ -336,51 +336,46 @@ export const footerSocial = [
 
 export const teamData = [
     {
-        image:team1,
-        name:'Jefferson Ramirez',
-        position:'Leader of Project',
-        social:['ri-linkedin-line'],
+        image: team1,
+        name: 'Jefferson Ramirez',
+        position_en: 'Founder & Project Lead',
+        position_es: 'Fundador y Líder de Proyecto',
         link_lk: "https://www.linkedin.com/in/jeffaprende/"
     },
     {
-        image:team2,
-        name:'Juan Sarteros',
-        position:'Engineer',
-        social:['ri-linkedin-line'],
+        image: team2,
+        name: 'Juan Saeteros',
+        position_en: 'Machine Learning Engineer',
+        position_es: 'Ingeniero de Machine Learning',
         link_lk: "https://www.linkedin.com/in/juan-marcos-saeteros-macias/"
-
     },
     {
-        image:team3,
-        name:'Erick Mendoza',
-        position:'Engineer',
-        social:['ri-linkedin-line'],
+        image: team3,
+        name: 'Erick Mendoza',
+        position_en: 'Computer Vision Engineer',
+        position_es: 'Ingeniero de Visión por Computadora',
         link_lk: "https://www.linkedin.com/in/jeffaprende/"
-
     },
     {
-        image:team4,
-        name:'Rolando Mendieta',
-        position:'Engineer',
-        social:['ri-linkedin-line'],
+        image: team4,
+        name: 'Rolando Mendieta',
+        position_en: 'Software Engineer',
+        position_es: 'Ingeniero de Software',
         link_lk: "https://www.linkedin.com/in/rolando-mendieta/"
-
     },
     {
-        image:team5,
-        name:'Joshua Vallejo',
-        position:'Engineer',
-        social:['ri-linkedin-line'],
+        image: team5,
+        name: 'Joshua Vallejo',
+        position_en: 'Field Operations Engineer',
+        position_es: 'Ingeniero de Operaciones en Campo',
         link_lk: "https://www.linkedin.com/in/jeffaprende/"
-
     },
     {
-        image:team6,
-        name:'George Yaguana',
-        position:'Engineer',
-        social:['ri-linkedin-line'],
+        image: team6,
+        name: 'George Yaguana',
+        position_en: 'Data & Systems Engineer',
+        position_es: 'Ingeniero de Datos y Sistemas',
         link_lk: "https://www.linkedin.com/in/jeffaprende/"
-
     },
 ]
 export const blogData = [
