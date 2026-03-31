@@ -8,8 +8,6 @@ import Project from "../../components/project";
 import AboutOne from "../../components/about-one";
 import ServiceThree from "../../components/service-three";
 import Footer from "../../components/footer";
-import fondoVideo from "../../assets/images/fondo.mp4"
-
 export default function IndexThree() {
   const [isOpen, setOpen] = useState<boolean>(false);
 
@@ -17,35 +15,42 @@ export default function IndexThree() {
     <>
       <NavLight />
 
-   <section className="relative min-h-screen w-full overflow-hidden flex items-center">
-        {/* Video Background (cover-like, prevents side gaps) */}
+      <section className="relative min-h-screen w-full overflow-hidden flex items-center">
+        {/* Video Background */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <video
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                      min-w-full min-h-full w-auto h-auto scale-100"
+            className="absolute inset-0 w-full h-full object-cover"
             autoPlay
             muted
             loop
             playsInline
-            
+            preload="auto"
+            poster="/images/fondo-poster.jpg"
           >
-            <source src={fondoVideo} type="video/mp4" />
+            <source src="/videos/fondo.webm" type="video/webm" />
+            <source src="/videos/fondo.mp4" type="video/mp4" />
           </video>
         </div>
 
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-slate-800/70 z-10" />
+        {/* Gradient vignette — preserves video clarity while anchoring the text */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/30 via-black/10 to-black/50 pointer-events-none" />
 
         {/* Content */}
         <div className="container relative z-20">
             <div className="grid grid-cols-1 pb-8 text-center mt-10">
-            <h3 className="font-bold text-white lg:leading-normal leading-normal text-4xl lg:text-5xl my-6">
+            <h3
+              className="font-bold text-white lg:leading-normal leading-normal text-4xl lg:text-5xl my-6"
+              style={{ textShadow: "0 2px 16px rgba(0,0,0,0.75), 0 1px 4px rgba(0,0,0,0.9)" }}
+            >
                 Scan Your Farm.
                 <br />
                 Predict Yield. Detect Risks Early.
             </h3>
 
-            <p className="text-white/70 text-lg max-w-xl mx-auto">
+            <p
+              className="text-white text-lg max-w-xl mx-auto"
+              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}
+            >
                 Airix helps growers turn field scans into actionable insights: plant counting,
                 production estimation, and early disease detection so you can plan, act faster,
                 and protect your harvest.

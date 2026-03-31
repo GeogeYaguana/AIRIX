@@ -63,14 +63,29 @@ export default function AboutOne() {
               </ul>
             </div>
 
-            {/* <div className="mt-6">
-              <Link
-                to="#"
-                className="h-10 px-5 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-primary/10 hover:bg-primary text-primary hover:text-white transition-all duration-300"
+            <div className="mt-8 flex flex-wrap gap-3">
+              {/* WhatsApp — canal principal de preguntas */}
+              <a
+                href="https://wa.me/593988955167?text=Hola%2C+tengo+una+consulta+sobre+Airix"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-11 px-5 tracking-wide inline-flex items-center justify-center gap-2 font-medium rounded-md bg-primary hover:bg-primary/90 text-white transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                Learn More <i className="ri-arrow-right-line align-middle ms-1"></i>
-              </Link>
-            </div> */}
+                <i className="ri-whatsapp-line text-lg"></i>
+                Consultar por WhatsApp
+              </a>
+
+              {/* Agendar visita — mensaje pre-cargado de agenda */}
+              <a
+                href="https://wa.me/593988955167?text=Hola%2C+quisiera+agendar+una+visita+de+campo+con+el+equipo+de+Airix"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-11 px-5 tracking-wide inline-flex items-center justify-center gap-2 font-medium rounded-md border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+              >
+                <i className="ri-calendar-schedule-line text-lg"></i>
+                Agendar una visita
+              </a>
+            </div>
           </div>
         </div>
       </div>
