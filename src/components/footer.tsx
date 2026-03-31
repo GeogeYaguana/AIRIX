@@ -79,21 +79,44 @@ export default function Footer() {
                             </h5>
 
                             <div className="flex mt-6">
-                                <i className="ri-map-pin-line text-xl text-primary mr-2"></i>
+                                <i className="ri-map-pin-line text-xl text-primary mr-2 mt-0.5 shrink-0"></i>
                                 <p className="text-gray-300">
                                     Agricultural Innovation Hub <br/>
                                     Latin America
                                 </p>
                             </div>
 
-                            <div className="flex mt-4">
-                                <i className="ri-phone-line text-xl text-primary mr-2"></i>
-                                <Link
-                                    to="tel:+593 991 677 856"
-                                    className="text-gray-300 hover:text-gray-400"
+                            <div className="flex flex-col gap-3 mt-6">
+                                {/* WhatsApp — canal principal */}
+                                <a
+                                    href="https://wa.me/593988955167?text=Hola%2C+tengo+una+consulta+sobre+Airix"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center gap-2 h-10 px-4 rounded-md bg-primary hover:bg-primary/90 text-white font-medium text-sm transition-all duration-300"
                                 >
-                                    +593 991 677 856
-                                </Link>
+                                    <i className="ri-whatsapp-line text-base"></i>
+                                    Consultar por WhatsApp
+                                </a>
+
+                                {/* Agendar visita */}
+                                <a
+                                    href="https://wa.me/593988955167?text=Hola%2C+quisiera+agendar+una+visita+de+campo+con+el+equipo+de+Airix"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center gap-2 h-10 px-4 rounded-md border border-slate-500 hover:border-primary text-gray-300 hover:text-primary font-medium text-sm transition-all duration-300"
+                                >
+                                    <i className="ri-calendar-schedule-line text-base"></i>
+                                    Agendar una visita
+                                </a>
+
+                                {/* Email fallback */}
+                                <a
+                                    href="mailto:marketing_ec_01@airixtech.com?subject=Consulta%20Airix"
+                                    className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-200 transition-colors duration-200"
+                                >
+                                    <i className="ri-mail-line"></i>
+                                    marketing_ec_01@airixtech.com
+                                </a>
                             </div>
                         </div>
 
