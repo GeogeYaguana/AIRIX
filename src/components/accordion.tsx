@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { faqData } from '../data/data'
+import { useTranslatedFaq } from '../hooks/useTranslatedData'
 
 interface FaqData{
     id: number;
@@ -8,10 +8,11 @@ interface FaqData{
 }
 
 export default function Accordion() {
+    const translatedFaq = useTranslatedFaq()
     let [activeIndex, setActiveIndex] = useState<number>(1)
   return (
     <div className="mt-6">
-        {faqData.map((item:FaqData,index:number)=>(
+        {translatedFaq.map((item:FaqData,index:number)=>(
             <div className="relative shadow-sm dark:shadow-gray-700 rounded-md overflow-hidden mt-3" key={index}>
                 <h2 className="font-medium">
                     <button onClick={()=>setActiveIndex(activeIndex === item.id ? 0 : item.id)} type="button" className={`flex justify-between items-center p-5 w-full font-medium text-start ${activeIndex === item.id ? 'bg-gray-50 dark:bg-slate-800 text-primary' : ''}`}>

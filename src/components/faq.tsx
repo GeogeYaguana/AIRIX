@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import image1 from '../assets/images/3.jpg'
 import Accordion from './accordion'
 
 export default function Faq() {
+    const { t } = useTranslation()
     let [isOpen, setOpen] = useState<boolean>(false)
     
   return (
@@ -17,8 +19,8 @@ export default function Faq() {
             </div>
 
             <div className="xl:col-span-6 lg:col-span-5 col-span-12 lg:order-1 order-2">
-                <h4 className="mb-4 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Questions & Answers</h4>
-                <p className="text-slate-400">Join Greenoza to lead the future of renewable energy with innovative solar solutions. Contribute to sustainability and professional growth.</p>
+                <h4 className="mb-4 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">{t('faq.title')}</h4>
+                <p className="text-slate-400">{t('faq.subtitle')}</p>
 
                 <Accordion/>
             </div>

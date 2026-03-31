@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "title_line1": "Escanea tu finca.",
+    "title_line2": "Predice tu cosecha. Detecta riesgos a tiempo.",
+    "subtitle": "Airix ayuda a los productores a convertir escaneos de campo en información accionable: conteo de plantas, estimación de producción y detección temprana de enfermedades para que puedas planificar, actuar más rápido y proteger tu cosecha."
+  },
+  "intelligence": {
+    "title": "Inteligencia de campo, hecha para productores",
+    "subtitle": "Desde un simple escaneo con móvil hasta vuelos con dron o multiespectrales, Airix transforma imágenes en mapas, conteos y alertas que puedes usar de inmediato sin necesitar un equipo técnico."
+  },
+  "about": {
+    "title": "Escaneos que se convierten en decisiones",
+    "body": "Airix es una plataforma SaaS que ayuda a los productores a digitalizar sus campos y reducir la incertidumbre. Usando escaneos con móvil, dron o sensores multiespectrales, convertimos imágenes en resultados prácticos: conteos, estimaciones de rendimiento y señales de riesgo tempranas para que puedas priorizar acciones, planificar la cosecha y proteger la producción.",
+    "feature_1": "Conteo de plantas y frutos",
+    "feature_2": "Estimación de rendimiento",
+    "feature_3": "Mapas de variabilidad de campo",
+    "feature_4": "Detección temprana de enfermedades",
+    "feature_5": "Monitoreo de temporada",
+    "feature_6": "Alertas accionables",
+    "img_alt": "Escaneos Airix",
+    "btn_whatsapp": "Consultar por WhatsApp",
+    "btn_schedule": "Agendar una visita",
+    "wa_msg_question": "Hola, tengo una consulta sobre Airix",
+    "wa_msg_schedule": "Hola, quisiera agendar una visita de campo con el equipo de Airix"
+  },
+  "projects_section": {
+    "title": "Resultados reales en campo",
+    "subtitle": "Explora despliegues enfocados en estimación de rendimiento, conteo de plantas y detección temprana, optimizados para decisiones prácticas en el campo."
+  },
+  "faq": {
+    "title": "Preguntas y respuestas",
+    "subtitle": "Respondemos las preguntas más frecuentes sobre nuestra plataforma y cómo funciona en el campo."
+  },
+  "services": [
+    {
+      "title": "Todos los datos de tu campo en tu bolsillo, solo enfócate en ejecutar",
+      "desc": "Libera horas de trabajo manual en recolección de datos: conteo de mazorcas de cacao, detección de enfermedades fitosanitarias y más, directamente desde el campo."
+    },
+    {
+      "title": "Automatiza el control de maleza en tus campos",
+      "desc": "Usa nuestro rover autónomo para cortar maleza en áreas específicas de tu finca mientras escanea en tiempo real el estado de salud de tus cultivos."
+    },
+    {
+      "title": "Convierte los datos de campo en decisiones accionables",
+      "desc": "Obtén análisis de suelo denso y de alta precisión en toda tu finca para tomar mejores decisiones sobre fertilización, riego y manejo de cultivos."
+    }
+  ],
+  "faq_items": [
+    {
+      "title": "¿Cómo funciona el sistema?",
+      "desc": "El rover integra cámaras RGB, LiDAR, sensores ambientales y una unidad de cómputo embebida para ejecutar nuestros modelos de visión por computadora. Detecta enfermedades, cuenta mazorcas de cacao y analiza las condiciones del cultivo en tiempo real directamente en el campo."
+    },
+    {
+      "title": "¿Qué tecnología impulsa la plataforma?",
+      "desc": "Nuestra solución combina inteligencia artificial, redes neuronales convolucionales e imágenes RGB para clasificar el estado de salud del cacao, estimar el rendimiento y generar información agronómica accionable para productores y actores del agronegocio."
+    },
+    {
+      "title": "¿Cómo pueden los productores implementar el sistema?",
+      "desc": "La plataforma está diseñada para un despliegue fluido en fincas de cacao. Una vez instalado, el rover navega de forma autónoma por la plantación, recopila datos de campo y sincroniza los resultados en un panel centralizado para monitoreo y toma de decisiones."
+    },
+    {
+      "title": "¿Qué ocurre después de recopilar los datos?",
+      "desc": "Los datos capturados se procesan a través de nuestro motor de análisis predictivo. Los productores reciben informes sobre riesgo de enfermedades, estimaciones de producción e indicadores de condición del suelo, lo que permite una intervención temprana, un uso optimizado de recursos y una mayor productividad."
+    }
+  ],
+  "projects": [
+    { "title": "Cacao Health AI",       "subtitle": "Sistema Predictivo de Detección de Enfermedades" },
+    { "title": "Cacao Yield Vision",    "subtitle": "Conteo Inteligente de Mazorcas" },
+    { "title": "Control de Maleza",     "subtitle": "Sistema Automatizado de Corte de Maleza" },
+    { "title": "Soil Insight",          "subtitle": "Muestreo y Análisis de Suelo" },
+    { "title": "Plataforma AgroData",   "subtitle": "Gestión Inteligente de Finca" },
+    { "title": "Cacao Sostenible",      "subtitle": "Soluciones de Agricultura Regenerativa" },
+    { "title": "Agricultura de Precisión", "subtitle": "Tecnología de Imágenes Multiespectrales" },
+    { "title": "Optimización de Cosecha", "subtitle": "Mejora del Rendimiento Productivo" }
+  ],
+  "footer": {
+    "tagline": "Airix potencia a los agricultores con monitoreo inteligente de cultivos, analítica predictiva e información impulsada por IA para mejorar la productividad agrícola y la sostenibilidad.",
+    "email_placeholder": "Tu correo electrónico",
+    "col_company": "Empresa",
+    "col_contact": "Contacto",
+    "address_line1": "Hub de Innovación Agrícola",
+    "address_line2": "Latinoamérica",
+    "btn_whatsapp": "Consultar por WhatsApp",
+    "btn_schedule": "Agendar una visita",
+    "wa_msg_question": "Hola, tengo una consulta sobre Airix",
+    "wa_msg_schedule": "Hola, quisiera agendar una visita de campo con el equipo de Airix",
+    "copyright": "Airix. Construido para la agricultura inteligente.",
+    "nav_about": "Acerca de",
+    "nav_services": "Servicios",
+    "nav_faqs": "Preguntas"
+  },
+  "nav": {
+    "home":     "Inicio",
+    "about":    "Nosotros",
+    "services": "Servicios",
+    "faqs":     "Preguntas",
+    "contact":  "Contacto"
+  },
+  "lang_switcher": {
+    "label": "Idioma"
+  }
+}

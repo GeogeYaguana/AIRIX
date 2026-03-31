@@ -1,6 +1,7 @@
+import { useTranslation } from 'react-i18next'
 import logo from '../assets/images/logo-light.png'
 import { Link } from 'react-router-dom'
-import { footerLinkTwo } from '../data/data'
+import { useTranslatedFooterLinks } from '../hooks/useTranslatedData'
 
 interface LinkData{
     link: string;
@@ -8,6 +9,8 @@ interface LinkData{
 }
 
 export default function Footer() {
+    const { t } = useTranslation()
+    const footerLinks = useTranslatedFooterLinks()
 
     const BackToTop = () =>{
         window.scrollTo(0, 0)
@@ -26,9 +29,7 @@ export default function Footer() {
                             </Link>
 
                             <p className="mt-6 text-gray-300 max-w-md">
-                                Airix empowers farmers with intelligent crop monitoring,
-                                predictive analytics, and AI-driven insights to improve
-                                agricultural productivity and sustainability.
+                                {t('footer.tagline')}
                             </p>
 
                             <form className="mt-4 max-w-sm">
@@ -38,7 +39,7 @@ export default function Footer() {
                                     <input
                                         type="email"
                                         className="w-full h-10 pl-10 pr-12 rounded-md bg-transparent border border-slate-700 text-gray-100 placeholder:text-gray-400 focus:outline-none"
-                                        placeholder="Your email"
+                                        placeholder={t('footer.email_placeholder')}
                                         required
                                     />
 
@@ -55,11 +56,11 @@ export default function Footer() {
                         {/* Company */}
                         <div className="lg:col-span-3 md:col-span-3">
                             <h5 className="tracking-wide text-gray-100 font-semibold text-lg">
-                                Company
+                                {t('footer.col_company')}
                             </h5>
 
                             <ul className="mt-6 space-y-2">
-                                {footerLinkTwo.map((item:LinkData,index:number)=>(
+                                {footerLinks.map((item:LinkData,index:number)=>(
                                     <li key={index}>
                                         <Link
                                             to={item.link}
@@ -75,41 +76,38 @@ export default function Footer() {
                         {/* Contact */}
                         <div className="lg:col-span-3 md:col-span-3">
                             <h5 className="tracking-wide text-gray-100 font-semibold text-lg">
-                                Contact
+                                {t('footer.col_contact')}
                             </h5>
 
                             <div className="flex mt-6">
                                 <i className="ri-map-pin-line text-xl text-primary mr-2 mt-0.5 shrink-0"></i>
                                 <p className="text-gray-300">
-                                    Agricultural Innovation Hub <br/>
-                                    Latin America
+                                    {t('footer.address_line1')} <br/>
+                                    {t('footer.address_line2')}
                                 </p>
                             </div>
 
                             <div className="flex flex-col gap-3 mt-6">
-                                {/* WhatsApp — canal principal */}
                                 <a
-                                    href="https://wa.me/593988955167?text=Hola%2C+tengo+una+consulta+sobre+Airix"
+                                    href={`https://wa.me/593988955167?text=${encodeURIComponent(t('footer.wa_msg_question'))}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center gap-2 h-10 px-4 rounded-md bg-primary hover:bg-primary/90 text-white font-medium text-sm transition-all duration-300"
                                 >
                                     <i className="ri-whatsapp-line text-base"></i>
-                                    Consultar por WhatsApp
+                                    {t('footer.btn_whatsapp')}
                                 </a>
 
-                                {/* Agendar visita */}
                                 <a
-                                    href="https://wa.me/593988955167?text=Hola%2C+quisiera+agendar+una+visita+de+campo+con+el+equipo+de+Airix"
+                                    href={`https://wa.me/593988955167?text=${encodeURIComponent(t('footer.wa_msg_schedule'))}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center gap-2 h-10 px-4 rounded-md border border-slate-500 hover:border-primary text-gray-300 hover:text-primary font-medium text-sm transition-all duration-300"
                                 >
                                     <i className="ri-calendar-schedule-line text-base"></i>
-                                    Agendar una visita
+                                    {t('footer.btn_schedule')}
                                 </a>
 
-                                {/* Email fallback */}
                                 <a
                                     href="mailto:marketing_ec_01@airixtech.com?subject=Consulta%20Airix"
                                     className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-200 transition-colors duration-200"
@@ -129,7 +127,7 @@ export default function Footer() {
                 <div className="container flex md:flex-row flex-col items-center justify-between gap-4">
 
                     <p className="text-gray-300 text-center md:text-left">
-                        © {new Date().getFullYear()} Airix. Built for smart agriculture.
+                        © {new Date().getFullYear()} {t('footer.copyright')}
                     </p>
 
                     <button

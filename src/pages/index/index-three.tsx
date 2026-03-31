@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { useTranslation } from "react-i18next";
 
 import NavLight from "../../components/navbar/nav-light";
 
@@ -10,6 +10,7 @@ import ServiceThree from "../../components/service-three";
 import Footer from "../../components/footer";
 export default function IndexThree() {
   const [isOpen, setOpen] = useState<boolean>(false);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -42,18 +43,16 @@ export default function IndexThree() {
               className="font-bold text-white lg:leading-normal leading-normal text-4xl lg:text-5xl my-6"
               style={{ textShadow: "0 2px 16px rgba(0,0,0,0.75), 0 1px 4px rgba(0,0,0,0.9)" }}
             >
-                Scan Your Farm.
+                {t('hero.title_line1')}
                 <br />
-                Predict Yield. Detect Risks Early.
+                {t('hero.title_line2')}
             </h3>
 
             <p
               className="text-white text-lg max-w-xl mx-auto"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}
             >
-                Airix helps growers turn field scans into actionable insights: plant counting,
-                production estimation, and early disease detection so you can plan, act faster,
-                and protect your harvest.
+                {t('hero.subtitle')}
             </p>
 
             {/* <div className="mt-8">
@@ -81,13 +80,11 @@ export default function IndexThree() {
             <div className="lg:col-span-5 md:col-span-6">
               <div className="sticky top-20">
                 <h4 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">
-                  Farm Intelligence, Built for Growers
+                  {t('intelligence.title')}
                 </h4>
 
                 <p className="text-slate-400 max-w-xl mx-auto">
-                  From a simple mobile scan to drone or multispectral flights,
-                  Airix transforms imagery into maps, counts, and alerts you can
-                  use immediately without needing a technical team.
+                  {t('intelligence.subtitle')}
                 </p>
               </div>
             </div>
@@ -124,11 +121,10 @@ export default function IndexThree() {
         <div className="container relative md:mt-24 mt-16">
           <div className="grid grid-cols-1 pb-6 text-center">
             <h4 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">
-              Real-World Field Outcomes
+              {t('projects_section.title')}
             </h4>
             <p className="text-slate-400 max-w-xl mx-auto">
-              Explore deployments focused on yield estimation, plant counting,
-              and early detection optimized for practical decisions in the field.
+              {t('projects_section.subtitle')}
             </p>
           </div>
           <Project />

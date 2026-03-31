@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from './LanguageSwitcher'
 
 import logoDark from '../../assets/images/logo-dark.png'
 import logoLight from '../../assets/images/logo-light.png'
 
 export default function NavLight() {
+    const { t } = useTranslation()
     let [scroll, setScroll] = useState<boolean>(false);
     let [toggle, setToggle] = useState<boolean>(false);
-    //let [modal, setModal] = useState<boolean>(false);
     let [manu, setManu] = useState<string>('');
 
     const loction = useLocation()
@@ -37,6 +39,12 @@ export default function NavLight() {
                     </span>
                     <img src={logoLight} height="24" className="hidden dark:inline-block" alt=""/>
                 </Link>
+
+                <ul className="buy-button list-none mb-0">
+                    <li className="inline-block">
+                        <LanguageSwitcher />
+                    </li>
+                </ul>
 
                 <div className="menu-extras">
                     <div className="menu-item">
@@ -77,58 +85,21 @@ export default function NavLight() {
 
                 <div id="navigation" style={{display: toggle ? 'block' : 'none'}}>
                     <ul className="navigation-menu !justify-end nav-light">
-                        <li className={`has-submenu parent-parent-menu-item ${['/','/index-two','/index-three','/index-four'].includes(manu) ? 'active' : ''}`}>
-                            {/* <Link to="/" >Home</Link> */}
-                
+                        <li className={`${['/','/index-three'].includes(manu) ? 'active' : ''}`}>
+                            <Link to="/" className="sub-menu-item">{t('nav.home')}</Link>
                         </li>
-
-                        {/* <li className={`${manu === '/aboutus' ? 'active' : ''}`}><Link to="/aboutus" className="sub-menu-item">About Us</Link></li> */}
-
-                        {/* <li className={`${manu === '/services' ? 'active' : ''}`}><Link to="/services" className="sub-menu-item">Services</Link></li> */}
-{/*
-                        <li className={`has-submenu parent-parent-menu-item ${['/projects','/project-detail'].includes(manu)? 'active' : ''}`}>
-                            <Link to="#" onClick={()=>setSubManu(subManu === 'project' ? '' : 'project')}>Projects</Link><span className="menu-arrow"></span>
-                            <ul className={`submenu ${['project'].includes(subManu) ? 'open' : ''}`}>
-                                <li className={`${manu === '/projects' ? 'active' : ''}`}><Link to="/projects" className="sub-menu-item">Projects</Link></li>
-                                <li className={`${manu === '/project-detail' ? 'active' : ''}`}><Link to="/project-detail" className="sub-menu-item">Project Detail</Link></li>
-                            </ul>
-                        </li>*/}
-{/*
-                        <li className={`has-submenu parent-parent-menu-item ${['/pricing','/team','/faqs','/blogs','/blog-detail','/terms','/privacy','/contactus'].includes(manu) ? 'active' : ''}`}>
-                            <Link to="#" onClick={()=>setSubManu(subManu === 'inner-page' ? '' : 'inner-page')}>Pages</Link><span className="menu-arrow"></span>
-                            <ul className={`submenu ${['inner-page','blog','auth','special','utility'].includes(subManu) ? 'open' : ''}`}>
-                                <li className={`${manu === '/pricing' ? 'active' : ''}`}><Link to="/pricing" className="sub-menu-item">Pricing</Link></li>
-                                <li className={`${manu === '/team' ? 'active' : ''}`}><Link to="/team" className="sub-menu-item">Team</Link></li>
-                                <li className={`${manu === '/faqs' ? 'active' : ''}`}><Link to="/faqs" className="sub-menu-item">Faqs</Link></li>
-                                <li className={`has-submenu parent-menu-item ${['/blogs','/blog-detail'].includes(manu) ? 'active' : ''}`}><Link to="#" onClick={()=>setSubManu(subManu === 'blog' ? '' : 'blog')}> Blog </Link><span className="submenu-arrow"></span>
-                                    <ul className={`submenu ${['blog'].includes(subManu) ? 'open' : ''}`}>
-                                        <li className={`${manu === '/blogs' ? 'active' : ''}`}><Link to="/blogs" className="sub-menu-item"> Blogs</Link></li>
-                                        <li className={`${manu === '/blog-detail' ? 'active' : ''}`}><Link to="/blog-detail" className="sub-menu-item"> Blog Detail</Link></li>
-                                    </ul> 
-                                </li>
-                                <li className="has-submenu parent-menu-item"><Link to="" onClick={()=>setSubManu(subManu === 'auth' ? '' : 'auth')}> Auth Pages </Link><span className="submenu-arrow"></span>
-                                    <ul className={`submenu ${['auth'].includes(subManu) ? 'open' : ''}`}>
-                                        <li><Link to="/login" className="sub-menu-item">Login</Link></li>
-                                        <li><Link to="/signup" className="sub-menu-item">Signup</Link></li>
-                                        <li><Link to="/forgot-password" className="sub-menu-item">Reset Password</Link></li>
-                                    </ul>  
-                                </li>
-                                <li className="has-submenu parent-menu-item"><Link to="#" onClick={()=>setSubManu(subManu === 'special' ? '' : 'special')}> Special </Link><span className="submenu-arrow"></span>
-                                    <ul className={`submenu ${['special'].includes(subManu) ? 'open' : ''}`}>
-                                        <li><Link to="/comingsoon" className="sub-menu-item">Comingsoon</Link></li>
-                                        <li><Link to="/maintenance" className="sub-menu-item">Maintenance</Link></li>
-                                        <li><Link to="/404" className="sub-menu-item">404! Error</Link></li>
-                                    </ul>  
-                                </li>
-                                <li className={`has-submenu parent-menu-item ${['/terms','/privacy'].includes(manu) ? 'active' : ''}`}><Link onClick={()=>setSubManu(subManu === 'utility' ? '' : 'utility')} to="#"> Utility </Link><span className="submenu-arrow"></span>
-                                    <ul className={`submenu ${['utility'].includes(subManu) ? 'open' : ''}`}>
-                                        <li className={`${manu === '/terms' ? 'active' : ''}`}><Link to="/terms" className="sub-menu-item">Terms & Services</Link></li>
-                                        <li className={`${manu === '/privacy' ? 'active' : ''}`}><Link to="/privacy" className="sub-menu-item">Privacy Policy</Link></li>
-                                    </ul>  
-                                </li>
-                                <li className={`${manu === '/contactus' ? 'active' : ''}`}><Link to="/contactus" className="sub-menu-item">Contact Us</Link></li>
-                            </ul>
-                        </li> */}
+                        <li className={`${manu === '/aboutus' ? 'active' : ''}`}>
+                            <Link to="/aboutus" className="sub-menu-item">{t('nav.about')}</Link>
+                        </li>
+                        <li className={`${manu === '/services' ? 'active' : ''}`}>
+                            <Link to="/services" className="sub-menu-item">{t('nav.services')}</Link>
+                        </li>
+                        <li className={`${manu === '/faqs' ? 'active' : ''}`}>
+                            <Link to="/faqs" className="sub-menu-item">{t('nav.faqs')}</Link>
+                        </li>
+                        <li className={`${manu === '/contactus' ? 'active' : ''}`}>
+                            <Link to="/contactus" className="sub-menu-item">{t('nav.contact')}</Link>
+                        </li>
                     </ul>
                 </div>
             </div>

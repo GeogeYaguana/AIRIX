@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "title_line1": "Scan Your Farm.",
+    "title_line2": "Predict Yield. Detect Risks Early.",
+    "subtitle": "Airix helps growers turn field scans into actionable insights: plant counting, production estimation, and early disease detection so you can plan, act faster, and protect your harvest."
+  },
+  "intelligence": {
+    "title": "Farm Intelligence, Built for Growers",
+    "subtitle": "From a simple mobile scan to drone or multispectral flights, Airix transforms imagery into maps, counts, and alerts you can use immediately without needing a technical team."
+  },
+  "about": {
+    "title": "Scans That Turn Into Decisions",
+    "body": "Airix is a SaaS platform that helps growers digitize their fields and reduce uncertainty. Using mobile, drone, or multispectral scans, we convert imagery into practical outputs—counts, yield estimates, and early risk signals so you can prioritize actions, plan harvest, and protect production.",
+    "feature_1": "Plant & fruit counting",
+    "feature_2": "Yield estimation",
+    "feature_3": "Field variability maps",
+    "feature_4": "Early disease detection",
+    "feature_5": "Season monitoring",
+    "feature_6": "Actionable alerts",
+    "img_alt": "Airix Scans",
+    "btn_whatsapp": "Ask via WhatsApp",
+    "btn_schedule": "Schedule a visit",
+    "wa_msg_question": "Hello, I have a question about Airix",
+    "wa_msg_schedule": "Hello, I would like to schedule a field visit with the Airix team"
+  },
+  "projects_section": {
+    "title": "Real-World Field Outcomes",
+    "subtitle": "Explore deployments focused on yield estimation, plant counting, and early detection optimized for practical decisions in the field."
+  },
+  "faq": {
+    "title": "Questions & Answers",
+    "subtitle": "We answer the most common questions about our platform and how it works in the field."
+  },
+  "services": [
+    {
+      "title": "All your field data in your pocket just focus on execution",
+      "desc": "Free up hours of manual labor in data collection: cacao pod counting, phytosanitary disease detection, and more, directly from the field."
+    },
+    {
+      "title": "Automate weed control in your fields",
+      "desc": "Use our autonomous rover to cut weeds in specific areas of your farm while it scans the real-time health of your crops."
+    },
+    {
+      "title": "Turn field data into actionable decisions",
+      "desc": "Get dense, high-precision soil analysis across your entire farm to make better decisions on fertilization, irrigation, and crop management."
+    }
+  ],
+  "faq_items": [
+    {
+      "title": "How does the system work?",
+      "desc": "The rover integrates RGB cameras, LiDAR, environmental sensors, and an embedded computing unit to run our computer vision models. It detects diseases, counts cacao pods, and analyzes crop conditions in real time directly in the field."
+    },
+    {
+      "title": "What technology powers the platform?",
+      "desc": "Our solution combines artificial intelligence, convolutional neural networks, and RGB imaging to classify cacao health status, estimate yield, and generate actionable agronomic insights for farmers and agribusiness stakeholders."
+    },
+    {
+      "title": "How can farmers implement the system?",
+      "desc": "The platform is designed for seamless deployment in cacao farms. Once installed, the rover autonomously navigates the plantation, collects field data, and synchronizes results to a centralized dashboard for monitoring and decision-making."
+    },
+    {
+      "title": "What happens after data is collected?",
+      "desc": "Captured data is processed through our predictive analytics engine. Farmers receive reports on disease risk, production estimates, and soil condition indicators, enabling early intervention, optimized resource use, and improved productivity."
+    }
+  ],
+  "projects": [
+    { "title": "Cacao Health AI",      "subtitle": "Predictive Disease Detection System" },
+    { "title": "Cacao Yield Vision",   "subtitle": "Intelligent Pod Counting" },
+    { "title": "Smart Weed Control",   "subtitle": "Automated Weed Cutting System" },
+    { "title": "Soil Insight",         "subtitle": "Soil Sampling and Analysis" },
+    { "title": "AgroData Platform",    "subtitle": "Smart Farm Management" },
+    { "title": "Cacao Sustainability", "subtitle": "Regenerative Agriculture Solutions" },
+    { "title": "Precision Farming",    "subtitle": "Multispectral Imaging Technology" },
+    { "title": "Yield Optimization",   "subtitle": "Production Performance Enhancement" }
+  ],
+  "footer": {
+    "tagline": "Airix empowers farmers with intelligent crop monitoring, predictive analytics, and AI-driven insights to improve agricultural productivity and sustainability.",
+    "email_placeholder": "Your email",
+    "col_company": "Company",
+    "col_contact": "Contact",
+    "address_line1": "Agricultural Innovation Hub",
+    "address_line2": "Latin America",
+    "btn_whatsapp": "Ask via WhatsApp",
+    "btn_schedule": "Schedule a visit",
+    "wa_msg_question": "Hello, I have a question about Airix",
+    "wa_msg_schedule": "Hello, I would like to schedule a field visit with the Airix team",
+    "copyright": "Airix. Built for smart agriculture.",
+    "nav_about": "About Us",
+    "nav_services": "Services",
+    "nav_faqs": "FAQs"
+  },
+  "nav": {
+    "home":     "Home",
+    "about":    "About",
+    "services": "Services",
+    "faqs":     "FAQs",
+    "contact":  "Contact"
+  },
+  "lang_switcher": {
+    "label": "Language"
+  }
+}
