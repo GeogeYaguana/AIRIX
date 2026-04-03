@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 import bg from '../../assets/images/bg/1.jpg'
 
@@ -12,11 +13,14 @@ import { teamData } from '../../data/data'
 interface TeamData{
     image: string;
     name: string;
-    position: string;
-    social: string[];
+    position_en?: string;
+    position_es?: string;
+    link_lk: string;
 }
 
 export default function Team() {
+  const { i18n } = useTranslation()
+
   return (
     <>
         <NavLight/>   
@@ -48,18 +52,27 @@ export default function Team() {
                     {teamData.map((item:TeamData,index:number)=>(
                         <div className="group text-center rounded-md hover:shadow-lg hover:shadow-slate-200 dark:hover:shadow-slate-800 duration-500" key={index}>
                             <div className="relative mx-auto rounded-md group-hover:rounded-b-none overflow-hidden duration-500">
-                                <img src={item.image} className="w-full" alt=""/>
+                                <img src={item.image} className="w-full" alt={item.name}/>
                                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900 opacity-0 group-hover:opacity-100 duration-500"></div>
                                 <ul className="list-none absolute start-0 end-0 -bottom-20 group-hover:bottom-5 duration-500">
-                                    {item.social.map((el,index)=>( 
-                                        <li className="inline mx-0.5" key={index}><Link to="#" className="size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center bg-primary text-white rounded-md"><i className={el}></i></Link></li>
-                                    ))}
+                                    <li className="inline mx-0.5">
+                                        <Link
+                                            to={item.link_lk}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center bg-primary text-white rounded-md"
+                                        >
+                                            <i className="ri-linkedin-line"></i>
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
-        
+
                             <div className="p-4">
                                 <Link to="#" className="text-lg font-medium hover:text-primary duration-500">{item.name}</Link>
-                                <p className="text-slate-400">{item.position}</p>
+                                <p className="text-slate-400">
+                                    {i18n.language === 'es' ? item.position_es : item.position_en}
+                                </p>
                             </div>
                         </div>
                     ))}
