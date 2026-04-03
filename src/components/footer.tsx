@@ -19,98 +19,98 @@ function generateChallenge() {
     return { a, b, answer: a + b, question: `${a} + ${b} =` }
 }
 
-function NewsletterForm() {
-    const { t } = useTranslation()
-    const [challenge, setChallenge] = useState(generateChallenge)
-    const [email, setEmail]         = useState('')
-    const [captcha, setCaptcha]     = useState('')
-    const [error, setError]         = useState('')
-    const [success, setSuccess]     = useState(false)
+// function NewsletterForm() {
+//     const { t } = useTranslation()
+//     const [challenge, setChallenge] = useState(generateChallenge)
+//     const [email, setEmail]         = useState('')
+//     const [captcha, setCaptcha]     = useState('')
+//     const [error, setError]         = useState('')
+//     const [success, setSuccess]     = useState(false)
 
-    const refresh = useCallback(() => {
-        setChallenge(generateChallenge())
-        setCaptcha('')
-    }, [])
+//     const refresh = useCallback(() => {
+//         setChallenge(generateChallenge())
+//         setCaptcha('')
+//     }, [])
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault()
-        setError('')
+//     const handleSubmit = (e: React.FormEvent) => {
+//         e.preventDefault()
+//         setError('')
 
-        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            setError(t('newsletter.error_email'))
-            return
-        }
-        if (parseInt(captcha, 10) !== challenge.answer) {
-            setError(t('newsletter.error_captcha'))
-            refresh()
-            return
-        }
-        setSuccess(true)
-    }
+//         if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+//             setError(t('newsletter.error_email'))
+//             return
+//         }
+//         if (parseInt(captcha, 10) !== challenge.answer) {
+//             setError(t('newsletter.error_captcha'))
+//             refresh()
+//             return
+//         }
+//         setSuccess(true)
+//     }
 
-    if (success) {
-        return (
-            <p className="mt-4 flex items-center gap-2 text-primary font-medium text-sm">
-                <i className="ri-checkbox-circle-line text-lg"></i>
-                {t('newsletter.success')}
-            </p>
-        )
-    }
+//     if (success) {
+//         return (
+//             <p className="mt-4 flex items-center gap-2 text-primary font-medium text-sm">
+//                 <i className="ri-checkbox-circle-line text-lg"></i>
+//                 {t('newsletter.success')}
+//             </p>
+//         )
+//     }
 
-    return (
-        <form onSubmit={handleSubmit} className="mt-4 max-w-sm space-y-2" noValidate>
-            {/* Email input */}
-            <div className="relative">
-                <i className="ri-mail-line absolute top-2.5 left-3 text-gray-400"></i>
-                <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full h-10 pl-10 pr-12 rounded-md bg-transparent border border-slate-700 text-gray-100 placeholder:text-gray-400 focus:outline-none focus:border-primary/60 transition-colors"
-                    placeholder={t('newsletter.placeholder')}
-                    required
-                />
-                <button
-                    type="submit"
-                    className="absolute right-1 top-1 size-8 flex items-center justify-center rounded-md bg-primary text-white hover:bg-primary/80 transition-colors"
-                >
-                    <i className="ri-send-plane-line"></i>
-                </button>
-            </div>
+//     return (
+//         <form onSubmit={handleSubmit} className="mt-4 max-w-sm space-y-2" noValidate>
+//             {/* Email input */}
+//             <div className="relative">
+//                 <i className="ri-mail-line absolute top-2.5 left-3 text-gray-400"></i>
+//                 <input
+//                     type="email"
+//                     value={email}
+//                     onChange={(e) => setEmail(e.target.value)}
+//                     className="w-full h-10 pl-10 pr-12 rounded-md bg-transparent border border-slate-700 text-gray-100 placeholder:text-gray-400 focus:outline-none focus:border-primary/60 transition-colors"
+//                     placeholder={t('newsletter.placeholder')}
+//                     required
+//                 />
+//                 <button
+//                     type="submit"
+//                     className="absolute right-1 top-1 size-8 flex items-center justify-center rounded-md bg-primary text-white hover:bg-primary/80 transition-colors"
+//                 >
+//                     <i className="ri-send-plane-line"></i>
+//                 </button>
+//             </div>
 
-            {/* CAPTCHA row */}
-            <div className="flex items-center gap-2">
-                <label className="text-gray-400 text-xs shrink-0 whitespace-nowrap">
-                    {t('newsletter.captcha_label')} <span className="text-gray-200 font-semibold">{challenge.question}</span>
-                </label>
-                <input
-                    type="number"
-                    value={captcha}
-                    onChange={(e) => setCaptcha(e.target.value)}
-                    className="w-16 h-8 px-2 rounded-md bg-transparent border border-slate-700 text-gray-100 text-center text-sm focus:outline-none focus:border-primary/60 transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                    placeholder={t('newsletter.captcha_placeholder')}
-                    required
-                />
-                <button
-                    type="button"
-                    onClick={refresh}
-                    aria-label="Refresh captcha"
-                    className="text-gray-500 hover:text-gray-300 transition-colors"
-                >
-                    <i className="ri-refresh-line text-base"></i>
-                </button>
-            </div>
+//             {/* CAPTCHA row */}
+//             <div className="flex items-center gap-2">
+//                 <label className="text-gray-400 text-xs shrink-0 whitespace-nowrap">
+//                     {t('newsletter.captcha_label')} <span className="text-gray-200 font-semibold">{challenge.question}</span>
+//                 </label>
+//                 <input
+//                     type="number"
+//                     value={captcha}
+//                     onChange={(e) => setCaptcha(e.target.value)}
+//                     className="w-16 h-8 px-2 rounded-md bg-transparent border border-slate-700 text-gray-100 text-center text-sm focus:outline-none focus:border-primary/60 transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+//                     placeholder={t('newsletter.captcha_placeholder')}
+//                     required
+//                 />
+//                 <button
+//                     type="button"
+//                     onClick={refresh}
+//                     aria-label="Refresh captcha"
+//                     className="text-gray-500 hover:text-gray-300 transition-colors"
+//                 >
+//                     <i className="ri-refresh-line text-base"></i>
+//                 </button>
+//             </div>
 
-            {/* Error */}
-            {error && (
-                <p className="text-red-400 text-xs flex items-center gap-1">
-                    <i className="ri-error-warning-line"></i>
-                    {error}
-                </p>
-            )}
-        </form>
-    )
-}
+//             {/* Error */}
+//             {error && (
+//                 <p className="text-red-400 text-xs flex items-center gap-1">
+//                     <i className="ri-error-warning-line"></i>
+//                     {error}
+//                 </p>
+//             )}
+//         </form>
+//     )
+// }
 
 export default function Footer() {
     const { t } = useTranslation()

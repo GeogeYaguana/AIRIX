@@ -1,15 +1,18 @@
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { teamData } from '../data/data'
 
 interface TeamData{
     image: string;
     name: string;
-    position: string;
-    social: string[];
+    position_en?: string;
+    position_es?: string;
     link_lk: string;
 }
 
 export default function Team() {
+  const { i18n } = useTranslation()
+
   return (
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 mt-6 gap-6">
             {teamData.slice(0,6).map((item:TeamData,index:number)=>(
@@ -29,14 +32,16 @@ export default function Team() {
                                 rel="noopener noreferrer"
                                 className="size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center bg-primary text-white rounded-md"
                             >
-                                <i className={item.social[0]}></i>
+                                <i className="ri-linkedin-line"></i>
                             </Link>
                             </li>
                         </ul>
                         </div>
                     <div className="p-4">
                         <Link to="#" className="text-lg font-medium hover:text-primary duration-500">{item.name}</Link>
-                        <p className="text-slate-400">{item.position}</p>
+                        <p className="text-slate-400">
+                            {i18n.language === 'es' ? item.position_es : item.position_en}
+                        </p>
                     </div>
                 </div>
             ))}
