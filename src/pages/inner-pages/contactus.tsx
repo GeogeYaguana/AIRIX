@@ -22,10 +22,6 @@ function genChallenge() {
   return { a, b, answer: a + b, question: `${a} + ${b} =` };
 }
 
-// ── Google Maps embed — Guayaquil, near US Consulate ─────────────────────────
-const MAP_EMBED =
-  "https://maps.google.com/maps?q=Consulado+General+de+los+Estados+Unidos+Guayaquil&hl=es&z=15&output=embed";
-
 // ── Contact info ─────────────────────────────────────────────────────────────
 const PHONE    = "+593 98 895 5167";
 const EMAIL    = "marketing_ec_01@airixtech.com";

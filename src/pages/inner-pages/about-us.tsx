@@ -69,13 +69,6 @@ function TeamCard({ member }: { member: TeamMember }) {
 export default function AboutUs() {
   const { t } = useTranslation();
 
-  const generalData = [
-    { label: t("about_page.general_name_label"),     value: t("about_page.general_name")     },
-    { label: t("about_page.general_location_label"), value: t("about_page.general_location") },
-    { label: t("about_page.general_legal_label"),    value: t("about_page.general_legal")    },
-    { label: t("about_page.general_founded_label"),  value: t("about_page.general_founded")  },
-  ];
-
   const pmvItems = [
     {
       icon: "ri-focus-3-line",
