@@ -3,6 +3,7 @@ import IndexTwo from './pages/index/index-two'
 import IndexThree from './pages/index/index-three'
 import IndexFour from './pages/index/index-four'
 import AboutUs from './pages/inner-pages/about-us'
+import Services from './pages/inner-pages/services'
 import Project from './pages/projects/projects'
 import ProjectDetail from './pages/projects/project-detail'
 import Pricing from './pages/inner-pages/pricing'
@@ -30,7 +31,7 @@ function App() {
         <Route path='/index-three' element={<IndexThree/>}/>
         <Route path='/index-four' element={<IndexFour/>}/>
         <Route path='/aboutus' element={<AboutUs/>}/>
-        <Route path='/services' element={<Comingsoon/>}/>
+        <Route path='/services' element={<Services/>}/>
         <Route path='/projects' element={<Project/>}/>
         <Route path='/project-detail' element={<ProjectDetail/>}/>
         <Route path='/project-detail/:id' element={<ProjectDetail/>}/>

@@ -8,9 +8,12 @@ import Footer from "../../components/footer";
 import { teamData } from "../../data/data";
 
 import heroBg   from "../../assets/images/bg/about_us.jpg";
-import heroBg2  from "../../assets/images/bg/about_us_2.jpg";
 import fieldImg from "../../assets/images/2.jpg";
 import logoDark from "../../assets/images/logo-dark.png";
+import nestleLogo from "../../assets/images/client/nestle.webp";
+import nvidiaLogo from "../../assets/images/client/nvidia.webp";
+import magapLogo from "../../assets/images/client/magap.webp";
+import unescoLogo from "../../assets/images/client/unesco.webp";
 
 interface TeamMember {
   image: string;
@@ -87,6 +90,25 @@ export default function AboutUs() {
       label: t("about_page.vision_label"),
       text: t("about_page.vision_text"),
       accent: "bg-sky-50 text-sky-600",
+    },
+  ];
+
+  const allies = [
+    {
+      name: "Nestle",
+      image: nestleLogo,
+    },
+    {
+      name: "NVIDIA",
+      image: nvidiaLogo,
+    },
+    {
+      name: "MAGAP",
+      image: magapLogo,
+    },
+    {
+      name: "UNESCO",
+      image: unescoLogo,
     },
   ];
 
@@ -251,29 +273,30 @@ export default function AboutUs() {
       </section>
 
       {/* ── Aliados / Colaboradores ──────────────────────────────────────── */}
-      <section
-        className="relative py-20 bg-no-repeat bg-center bg-cover"
-        style={{ backgroundImage: `url(${heroBg2})` }}
-      >
-        <div className="absolute inset-0 bg-slate-900/70" />
+      <section className="relative py-20 bg-white dark:bg-slate-950 border-y border-slate-200 dark:border-slate-800">
         <div className="container relative text-center">
-          <h4 className="md:text-3xl text-2xl font-semibold text-white mb-3">
+          <p className="uppercase tracking-[0.2em] text-xs font-semibold text-primary mb-3">
+            Trusted ecosystem
+          </p>
+          <h4 className="md:text-3xl text-2xl font-semibold text-slate-900 dark:text-white mb-3">
             {t("about_page.allies_title")}
           </h4>
-          <p className="text-white/70 max-w-lg mx-auto mb-10">
+          <p className="text-slate-500 dark:text-slate-300 max-w-2xl mx-auto mb-10">
             {t("about_page.allies_subtitle")}
           </p>
 
-          {/* Placeholder grid — replace with real logos */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-            {[1, 2, 3, 4].map((n) => (
-              <div
-                key={n}
-                className="bg-white/10 border border-white/20 rounded-xl h-20 flex items-center justify-center text-white/40 text-sm"
-              >
-                {t("about_page.allies_placeholder").split(".")[0]} {n}
-              </div>
-            ))}
+          <div className="allies-marquee max-w-6xl mx-auto">
+            <div className="allies-marquee__track">
+              {[...allies, ...allies].map((ally, index) => (
+                <div key={`${ally.name}-${index}`} className="allies-marquee__item">
+                  <img
+                    src={ally.image}
+                    alt={ally.name}
+                    className="max-h-11 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
