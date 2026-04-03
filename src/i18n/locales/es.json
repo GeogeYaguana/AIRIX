@@ -122,6 +122,41 @@
     "faqs":     "Preguntas",
     "contact":  "Contacto"
   },
+  "contact_page": {
+    "hero_title": "Contáctanos",
+    "breadcrumb": "Contacto",
+    "form_title": "Escríbenos",
+    "label_name": "Tu nombre",
+    "label_email": "Tu correo",
+    "label_subject": "Asunto",
+    "label_message": "Mensaje",
+    "ph_name": "Nombre completo",
+    "ph_email": "tu@correo.com",
+    "ph_subject": "¿En qué podemos ayudarte?",
+    "ph_message": "Cuéntanos sobre tu finca o proyecto…",
+    "btn_send": "Enviar mensaje",
+    "success": "¡Mensaje enviado! Te contactaremos pronto.",
+    "error_captcha": "Respuesta incorrecta, inténtalo de nuevo.",
+    "error_fields": "Por favor completa todos los campos requeridos.",
+    "captcha_label": "Verifica:",
+    "phone_title": "WhatsApp",
+    "phone_desc": "Disponible lunes–viernes, 9 am–6 pm (ECT)",
+    "email_title": "Correo",
+    "email_desc": "Respondemos en menos de 24 horas hábiles.",
+    "location_title": "Ubicación",
+    "location_desc": "Guayaquil, Ecuador",
+    "location_link": "Ver en el mapa",
+    "error_send": "No se pudo enviar. Intenta de nuevo o contáctanos por WhatsApp.",
+    "btn_sending": "Enviando…"
+  },
+  "newsletter": {
+    "placeholder": "Tu correo electrónico",
+    "captcha_label": "Verifica: ¿cuánto es",
+    "captcha_placeholder": "Respuesta",
+    "error_captcha": "Respuesta incorrecta, inténtalo de nuevo.",
+    "error_email": "Por favor ingresa un correo válido.",
+    "success": "¡Suscrito! Gracias."
+  },
   "lang_switcher": {
     "label": "Idioma"
   }
