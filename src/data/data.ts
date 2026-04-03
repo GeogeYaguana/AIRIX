@@ -8,7 +8,8 @@ import blog7 from '../assets/images/blogs/7.jpg'
 import blog8 from '../assets/images/blogs/8.jpg'
 import blog9 from '../assets/images/blogs/9.jpg'
 
-const team1 = 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400'
+const teamDefault = 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400'
+import team1 from '../assets/images/team/1.jpg'
 import team2 from '../assets/images/team/2.jpg'
 import team3 from '../assets/images/team/3.jpg'
 import team4 from '../assets/images/team/4.jpg'
@@ -132,7 +133,7 @@ export const projectdata = [
 
 export const clientData = [
     {
-        image:team1,
+        image:teamDefault,
         rate:['ri-star-fill','ri-star-fill','ri-star-fill','ri-star-fill','ri-star-fill'],
         desc:`" Online education has allowed me to balance work and study easily. The flexibility of choosing when to study has made it a perfect fit for my busy schedule! "`,
         name:'Ramon Gibson',
@@ -336,7 +337,7 @@ export const footerSocial = [
 
 export const teamData = [
     {
-        image: team1,
+        image: teamDefault,
         name: 'Jefferson Ramirez',
         position_en: 'Mechatronics Engineer',
         position_es: 'Ingeniero Mecatrónico',
@@ -350,7 +351,7 @@ export const teamData = [
         link_lk: "https://www.linkedin.com/in/juan-marcos-saeteros-macias/"
     },
     {
-        image: team1,
+        image: teamDefault,
         name: 'Erick Mendoza',
         position_en: 'Mechatronics Engineer',
         position_es: 'Ingeniero Mecatrónico',
@@ -371,7 +372,7 @@ export const teamData = [
         link_lk: "https://www.linkedin.com/in/josuacobos/"
     },
     {
-        image: team1,
+        image: teamDefault,
         name: 'George Yaguana',
         position_en: 'Computer Science Engineer',
         position_es: 'Ingeniero en Ciencias Computacionales',
