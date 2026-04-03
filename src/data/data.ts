@@ -354,7 +354,7 @@ export const teamData = [
         name: 'Erick Mendoza',
         position_en: 'Mechatronics Engineer',
         position_es: 'Ingeniero Mecatrónico',
-        link_lk: "https://www.linkedin.com/in/jeffaprende/"
+        link_lk: "https://www.linkedin.com/in/erick-mendoza-macias/"
     },
     {
         image: team4,
@@ -368,14 +368,14 @@ export const teamData = [
         name: 'Joshua Cobos',
         position_en: 'Mechatronics Engineer',
         position_es: 'Ingeniero Mecatrónico',
-        link_lk: "https://www.linkedin.com/in/jeffaprende/"
+        link_lk: "https://www.linkedin.com/in/josuacobos/"
     },
     {
         image: team1,
         name: 'George Yaguana',
         position_en: 'Computer Science Engineer',
         position_es: 'Ingeniero en Ciencias Computacionales',
-        link_lk: "https://www.linkedin.com/in/jeffaprende/"
+        link_lk: "https://www.linkedin.com/in/georgeyaguana/"
     },
 ]
 export const blogData = [
