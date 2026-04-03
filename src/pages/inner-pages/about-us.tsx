@@ -10,6 +10,7 @@ import { teamData } from "../../data/data";
 import heroBg   from "../../assets/images/bg/about_us.jpg";
 import heroBg2  from "../../assets/images/bg/about_us_2.jpg";
 import fieldImg from "../../assets/images/2.jpg";
+import logoDark from "../../assets/images/logo-dark.png";
 
 interface TeamMember {
   image: string;
@@ -26,38 +27,38 @@ function TeamCard({ member }: { member: TeamMember }) {
 
   return (
     <div
-      className="group relative overflow-hidden rounded-2xl shadow-md cursor-pointer select-none"
+      className="group rounded-2xl shadow-md overflow-hidden cursor-pointer select-none bg-white dark:bg-slate-900"
       onClick={() => setTapped((p) => !p)}
     >
-      {/* Photo */}
-      <img
-        src={member.image}
-        alt={member.name}
-        className="w-full h-72 object-cover object-top transition-transform duration-500 group-hover:scale-105"
-      />
+      {/* ── Photo area — overlay only covers this ── */}
+      <div className="relative overflow-hidden h-72">
+        <img
+          src={member.image}
+          alt={member.name}
+          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+        />
 
-      {/* Hover / tap overlay */}
-      <div
-        className={`absolute inset-0 bg-slate-900/80 flex flex-col items-center justify-center gap-4 transition-opacity duration-300
-          ${tapped ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
-      >
-        <p className="text-white font-bold text-lg text-center px-4">{member.name}</p>
-        <p className="text-primary text-sm font-medium text-center px-4">{position}</p>
-        <a
-          href={member.link_lk}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          aria-label={`${member.name} LinkedIn`}
-          className="mt-1 flex items-center gap-2 bg-[#0A66C2] hover:bg-[#004182] text-white font-semibold text-sm px-4 py-2 rounded-lg transition-colors duration-200"
+        {/* Hover / tap overlay — only over the photo */}
+        <div
+          className={`absolute inset-0 bg-slate-900/75 flex flex-col items-center justify-center gap-4 transition-opacity duration-300
+            ${tapped ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
         >
-          <i className="ri-linkedin-box-fill text-xl"></i>
-          {t("about_page.team_linkedin")}
-        </a>
+          <a
+            href={member.link_lk}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            aria-label={`${member.name} LinkedIn`}
+            className="flex items-center gap-2 bg-[#0A66C2] hover:bg-[#004182] text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors duration-200"
+          >
+            <i className="ri-linkedin-box-fill text-xl"></i>
+            {t("about_page.team_linkedin")}
+          </a>
+        </div>
       </div>
 
-      {/* Name bar — visible at rest, slides out on hover */}
-      <div className="absolute bottom-0 inset-x-0 bg-white/95 dark:bg-slate-900/95 px-4 py-3 transition-transform duration-300 group-hover:translate-y-full">
+      {/* ── Caption — always visible below the photo ── */}
+      <div className="px-4 py-3 border-t border-slate-100 dark:border-slate-700">
         <p className="font-semibold text-slate-800 dark:text-white text-sm">{member.name}</p>
         <p className="text-primary text-xs mt-0.5">{position}</p>
       </div>
@@ -135,38 +136,72 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* ── Datos generales ──────────────────────────────────────────────── */}
-      <section className="relative lg:py-24 py-16">
-        <div className="container">
-          <div className="grid md:grid-cols-2 grid-cols-1 gap-12 items-center">
+      {/* ── Quiénes somos ────────────────────────────────────────────────── */}
+      <section className="relative lg:py-24 py-16 overflow-hidden">
 
-            {/* Photo */}
+        {/* Decorative background circle */}
+        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+
+        <div className="container relative">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-14 items-center">
+
+            {/* ── Left: photo stack ── */}
             <div className="relative">
               <img
                 src={fieldImg}
                 alt="Airix field operations"
-                className="w-full rounded-2xl shadow-lg object-cover h-96"
+                className="w-full rounded-3xl shadow-xl object-cover h-[420px]"
               />
-              <div className="absolute -bottom-4 -right-4 bg-primary text-white rounded-xl px-5 py-3 shadow-md hidden md:block">
-                <p className="text-2xl font-bold leading-none">2024</p>
-                <p className="text-xs mt-0.5 opacity-80">{t("about_page.general_founded_label")}</p>
+
+              {/* Founded badge */}
+              <div className="absolute -bottom-5 -right-5 bg-primary text-white rounded-2xl px-6 py-4 shadow-lg hidden md:flex flex-col items-center">
+                <p className="text-3xl font-extrabold leading-none">2024</p>
+                <p className="text-xs mt-1 opacity-80 uppercase tracking-widest">{t("about_page.general_founded_label")}</p>
+              </div>
+
+              {/* Subtle decorative border frame */}
+              <div className="absolute -top-4 -left-4 w-24 h-24 border-4 border-primary/30 rounded-2xl pointer-events-none hidden md:block" />
+            </div>
+
+            {/* ── Right: logo + data ── */}
+            <div>
+              {/* Logo */}
+              <div className="mb-6">
+                <img src={logoDark} alt="Airix" className="h-10 w-auto" />
+              </div>
+
+              {/* Accent line + title */}
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-10 h-1 rounded-full bg-primary inline-block shrink-0"></span>
+                <h4 className="md:text-3xl text-2xl font-semibold">
+                  {t("about_page.general_title")}
+                </h4>
+              </div>
+
+              {/* Data items with icons */}
+              <div className="space-y-4">
+                {[
+                  { icon: "ri-building-line",     label: t("about_page.general_name_label"),     value: t("about_page.general_name")     },
+                  { icon: "ri-map-pin-line",       label: t("about_page.general_location_label"), value: t("about_page.general_location") },
+                  { icon: "ri-government-line",    label: t("about_page.general_legal_label"),    value: t("about_page.general_legal")    },
+                  { icon: "ri-calendar-check-line",label: t("about_page.general_founded_label"),  value: t("about_page.general_founded")  },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-primary/5 transition-colors duration-200"
+                  >
+                    <div className="size-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                      <i className={`${item.icon} text-base`}></i>
+                    </div>
+                    <div>
+                      <p className="text-xs text-slate-400 uppercase tracking-wide mb-0.5">{item.label}</p>
+                      <p className="font-semibold text-slate-800 dark:text-slate-100">{item.value}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* General data */}
-            <div>
-              <h4 className="md:text-3xl text-2xl font-semibold mb-6">
-                {t("about_page.general_title")}
-              </h4>
-              <dl className="space-y-4">
-                {generalData.map((item) => (
-                  <div key={item.label} className="flex gap-4 items-start border-b border-slate-100 pb-4 last:border-0">
-                    <dt className="text-slate-400 text-sm w-32 shrink-0 pt-0.5">{item.label}</dt>
-                    <dd className="font-medium text-slate-700 dark:text-slate-200">{item.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
           </div>
         </div>
       </section>

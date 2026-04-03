@@ -1,139 +1,319 @@
-import { useState } from "react";
-import { Link } from 'react-router-dom'
+import { useState, useCallback } from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import emailjs from "@emailjs/browser";
 
-import NavLight from "../../components/navbar/nav-light"; 
+import NavLight from "../../components/navbar/nav-light";
 import Footer from "../../components/footer";
+import {
+  EMAILJS_SERVICE_ID,
+  EMAILJS_TEMPLATE_ID,
+  EMAILJS_PUBLIC_KEY,
+  CONTACT_EMAIL,
+} from "../../config/emailjs";
 
-import contact from '../../assets/images/contact.svg'
+// ── Simple math CAPTCHA ───────────────────────────────────────────────────────
+function randomInt(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function genChallenge() {
+  const a = randomInt(1, 9);
+  const b = randomInt(1, 9);
+  return { a, b, answer: a + b, question: `${a} + ${b} =` };
+}
+
+// ── Google Maps embed — Guayaquil, near US Consulate ─────────────────────────
+const MAP_EMBED =
+  "https://maps.google.com/maps?q=Consulado+General+de+los+Estados+Unidos+Guayaquil&hl=es&z=15&output=embed";
+
+// ── Contact info ─────────────────────────────────────────────────────────────
+const PHONE    = "+593 98 895 5167";
+const EMAIL    = "marketing_ec_01@airixtech.com";
+const WA_BASE  = "https://wa.me/593988955167";
 
 export default function Contactus() {
-    const [isOpen, setOpen] = useState<boolean>(false)
+  const { t } = useTranslation();
+
+  // form state
+  const [name,    setName]    = useState("");
+  const [email,   setEmail]   = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [captcha, setCaptcha] = useState("");
+  const [challenge, setChallenge] = useState(genChallenge);
+  const [error,    setError]   = useState("");
+  const [success,  setSuccess] = useState(false);
+  const [sending,  setSending] = useState(false);
+
+  const refreshCaptcha = useCallback(() => {
+    setChallenge(genChallenge());
+    setCaptcha("");
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+
+    if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) {
+      setError(t("contact_page.error_fields"));
+      return;
+    }
+    if (parseInt(captcha, 10) !== challenge.answer) {
+      setError(t("contact_page.error_captcha"));
+      refreshCaptcha();
+      return;
+    }
+
+    setSending(true);
+
+    const credentialsMissing =
+      EMAILJS_SERVICE_ID  === "YOUR_SERVICE_ID"  ||
+      EMAILJS_TEMPLATE_ID === "YOUR_TEMPLATE_ID" ||
+      EMAILJS_PUBLIC_KEY  === "YOUR_PUBLIC_KEY";
+
+    const openWhatsApp = () => {
+      const text = [
+        `*${subject.trim()}*`,
+        "",
+        message.trim(),
+        "",
+        `— ${name.trim()} (${email.trim()})`,
+      ].join("\n");
+      window.open(`https://wa.me/593988955167?text=${encodeURIComponent(text)}`, "_blank");
+      setSuccess(true);
+    };
+
+    if (credentialsMissing) {
+      setSending(false);
+      openWhatsApp();
+      return;
+    }
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name:  name.trim(),
+          from_email: email.trim(),
+          subject:    subject.trim(),
+          message:    message.trim(),
+          to_email:   CONTACT_EMAIL,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      setSuccess(true);
+    } catch {
+      // EmailJS failed → fallback to WhatsApp
+      openWhatsApp();
+    } finally {
+      setSending(false);
+    }
+  };
+
+  const infoCards = [
+    {
+      icon: "ri-whatsapp-line",
+      title: t("contact_page.phone_title"),
+      desc:  t("contact_page.phone_desc"),
+      link:  `${WA_BASE}?text=${encodeURIComponent(t("about.wa_msg_question"))}`,
+      label: PHONE,
+      external: true,
+    },
+    {
+      icon: "ri-mail-line",
+      title: t("contact_page.email_title"),
+      desc:  t("contact_page.email_desc"),
+      link:  `mailto:${EMAIL}`,
+      label: EMAIL,
+      external: false,
+    },
+    {
+      icon: "ri-map-pin-line",
+      title: t("contact_page.location_title"),
+      desc:  t("contact_page.location_desc"),
+      link:  "",
+      label: "",
+      external: false,
+      hideLink: true,
+    },
+  ];
+
   return (
     <>
-        <NavLight/>
+      <NavLight />
 
-        <div className="container-fluid relative mt-20">
-            <div className="grid grid-cols-1">
-                <div className="w-full leading-[0] border-0">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin" style={{border:'0'}} className="w-full h-[500px]" allowFullScreen></iframe>
+      {/* Map banner — disabled */}
+
+      {/* ── Form + illustration ────────────────────────────────────────────── */}
+      <section className="relative lg:py-24 py-16">
+        <div className="container relative">
+          <div className="grid md:grid-cols-12 grid-cols-1 items-start gap-10">
+
+            {/* Info cards (left) */}
+            <div className="lg:col-span-5 md:col-span-5 space-y-6">
+              <div>
+                <h4 className="md:text-3xl text-2xl font-semibold mb-2">
+                  {t("contact_page.hero_title")}
+                </h4>
+                <p className="text-slate-400">
+                  {t("contact_page.phone_desc")}
+                </p>
+              </div>
+
+              {infoCards.map((card) => (
+                <div
+                  key={card.title}
+                  className="flex gap-4 items-start p-5 rounded-2xl bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-shadow duration-300"
+                >
+                  <div className="size-12 shrink-0 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
+                    <i className={`${card.icon} text-2xl`}></i>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold mb-1">{card.title}</h5>
+                    <p className="text-slate-400 text-sm mb-2">{card.desc}</p>
+                    {!card.hideLink && card.external ? (
+                      <a
+                        href={card.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary text-sm font-medium hover:underline break-all"
+                      >
+                        {card.label}
+                      </a>
+                    ) : !card.hideLink ? (
+                      <Link
+                        to={card.link}
+                        className="text-primary text-sm font-medium hover:underline break-all"
+                      >
+                        {card.label}
+                      </Link>
+                    ) : null}
+                  </div>
                 </div>
+              ))}
             </div>
+
+            {/* Contact form (right) */}
+            <div className="lg:col-span-7 md:col-span-7">
+              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm dark:shadow-gray-700 p-8">
+                <h3 className="mb-6 md:text-2xl text-xl font-semibold">
+                  {t("contact_page.form_title")}
+                </h3>
+
+                {success ? (
+                  <div className="flex items-center gap-3 text-primary font-medium py-10 justify-center">
+                    <i className="ri-checkbox-circle-line text-3xl"></i>
+                    <span>{t("contact_page.success")}</span>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} noValidate className="space-y-5">
+                    <div className="grid lg:grid-cols-2 gap-5">
+                      {/* Name */}
+                      <div>
+                        <label htmlFor="name" className="text-sm font-medium mb-1.5 block">
+                          {t("contact_page.label_name")} <span className="text-red-400">*</span>
+                        </label>
+                        <input
+                          id="name" name="name" type="text"
+                          value={name} onChange={(e) => setName(e.target.value)}
+                          className="w-full py-2 px-3 border border-slate-200 dark:border-slate-700 focus:border-primary/50 bg-transparent focus:outline-none rounded-lg h-10 text-sm transition-colors"
+                          placeholder={t("contact_page.ph_name")}
+                        />
+                      </div>
+                      {/* Email */}
+                      <div>
+                        <label htmlFor="cemail" className="text-sm font-medium mb-1.5 block">
+                          {t("contact_page.label_email")} <span className="text-red-400">*</span>
+                        </label>
+                        <input
+                          id="cemail" name="email" type="email"
+                          value={email} onChange={(e) => setEmail(e.target.value)}
+                          className="w-full py-2 px-3 border border-slate-200 dark:border-slate-700 focus:border-primary/50 bg-transparent focus:outline-none rounded-lg h-10 text-sm transition-colors"
+                          placeholder={t("contact_page.ph_email")}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Subject */}
+                    <div>
+                      <label htmlFor="subject" className="text-sm font-medium mb-1.5 block">
+                        {t("contact_page.label_subject")} <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        id="subject" name="subject" type="text"
+                        value={subject} onChange={(e) => setSubject(e.target.value)}
+                        className="w-full py-2 px-3 border border-slate-200 dark:border-slate-700 focus:border-primary/50 bg-transparent focus:outline-none rounded-lg h-10 text-sm transition-colors"
+                        placeholder={t("contact_page.ph_subject")}
+                      />
+                    </div>
+
+                    {/* Message */}
+                    <div>
+                      <label htmlFor="message" className="text-sm font-medium mb-1.5 block">
+                        {t("contact_page.label_message")} <span className="text-red-400">*</span>
+                      </label>
+                      <textarea
+                        id="message" name="message"
+                        value={message} onChange={(e) => setMessage(e.target.value)}
+                        rows={5}
+                        className="w-full py-2 px-3 border border-slate-200 dark:border-slate-700 focus:border-primary/50 bg-transparent focus:outline-none rounded-lg text-sm resize-none mt-0 transition-colors"
+                        placeholder={t("contact_page.ph_message")}
+                      />
+                    </div>
+
+                    {/* CAPTCHA */}
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <span className="text-sm text-slate-500">
+                        {t("contact_page.captcha_label")}{" "}
+                        <strong className="text-slate-700 dark:text-slate-200">
+                          {challenge.question}
+                        </strong>
+                      </span>
+                      <input
+                        type="number"
+                        value={captcha}
+                        onChange={(e) => setCaptcha(e.target.value)}
+                        className="w-20 py-1.5 px-2 border border-slate-200 dark:border-slate-700 focus:border-primary/50 bg-transparent focus:outline-none rounded-lg text-sm text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        placeholder="?"
+                      />
+                      <button
+                        type="button"
+                        onClick={refreshCaptcha}
+                        aria-label="Nueva pregunta"
+                        className="text-slate-400 hover:text-primary transition-colors"
+                      >
+                        <i className="ri-refresh-line text-base"></i>
+                      </button>
+                    </div>
+
+                    {/* Error */}
+                    {error && (
+                      <p className="text-red-400 text-sm flex items-center gap-1.5">
+                        <i className="ri-error-warning-line"></i>
+                        {error}
+                      </p>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={sending}
+                      className="h-11 px-8 inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-primary hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed text-white transition-all duration-300"
+                    >
+                      {sending
+                        ? <><i className="ri-loader-4-line animate-spin"></i>{t("contact_page.btn_sending")}</>
+                        : <><i className="ri-send-plane-line"></i>{t("contact_page.btn_send")}</>
+                      }
+                    </button>
+                  </form>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-
-        <section className="relative lg:py-24 py-16">
-            <div className="container relative">
-                <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-6">
-                    <div className="lg:col-span-7 md:col-span-6">
-                        <img src={contact} alt=""/>
-                    </div>
-
-                    <div className="lg:col-span-5 md:col-span-6">
-                        <div className="lg:me-5">
-                            <div className="bg-white dark:bg-slate-900 rounded-md shadow-sm dark:shadow-gray-700 p-6">
-                                <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Get in touch !</h3>
-
-                                <form>
-                                    <div className="grid lg:grid-cols-12 lg:gap-6">
-                                        <div className="lg:col-span-6 mb-5">
-                                            <label htmlFor="name" className="font-medium">Your Name:</label>
-                                            <input name="name" id="name" type="text" className="w-full py-2 px-3 border border-slate-200 dark:border-slate-800 focus:border-primary/30 dark:focus:border-primary/30 bg-transparent focus:outline-none rounded-md h-10 mt-2" placeholder="Name :"/>
-                                        </div>
-        
-                                        <div className="lg:col-span-6 mb-5">
-                                            <label htmlFor="email" className="font-medium">Your Email:</label>
-                                            <input name="email" id="email" type="email" className="w-full py-2 px-3 border border-slate-200 dark:border-slate-800 focus:border-primary/30 dark:focus:border-primary/30 bg-transparent focus:outline-none rounded-md h-10 mt-2" placeholder="Email :"/>
-                                        </div>
-                                    </div>
-    
-                                    <div className="grid grid-cols-1">
-                                        <div className="mb-5">
-                                            <label htmlFor="subject" className="font-medium">Your Question:</label>
-                                            <input name="subject" id="subject" className="w-full py-2 px-3 border border-slate-200 dark:border-slate-800 focus:border-primary/30 dark:focus:border-primary/30 bg-transparent focus:outline-none rounded-md h-10 mt-2" placeholder="Subject :"/>
-                                        </div>
-    
-                                        <div className="mb-5">
-                                            <label htmlFor="comments" className="font-medium">Your Comment:</label>
-                                            <textarea name="comments" id="comments" className="w-full py-2 px-3 border border-slate-200 dark:border-slate-800 focus:border-primary/30 dark:focus:border-primary/30 bg-transparent focus:outline-none rounded-md h-28 mt-2 textarea" placeholder="Message :"></textarea>
-                                        </div>
-                                    </div>
-                                    <button type="submit" id="submit" name="send" className="h-10 px-5 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-primary text-white">Send Message</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div className="container relative lg:mt-24 mt-16">
-                <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6">
-                    <div className="text-center px-6">
-                        <div className="size-16 bg-primary/5 text-primary rounded-2xl flex align-middle justify-center items-center shadow-xs mx-auto">
-                            <i className="ri-phone-line text-[26px]"></i>
-                        </div>
-
-                        <div className="content mt-4">
-                            <h5 className="text-lg font-semibold">Phone</h5>
-                            <p className="text-slate-400 mt-3">The phrasal sequence of the is now so that many campaign and benefit</p>
-                            
-                            <div className="mt-4">
-                                <Link to="tel:+152534-468-854" className="text-primary">+152 534-468-854</Link>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="text-center px-6">
-                        <div className="size-16 bg-primary/5 text-primary rounded-2xl flex align-middle justify-center items-center shadow-xs mx-auto">
-                            <i className="ri-mail-line text-[26px]"></i>
-                        </div>
-
-                        <div className="content mt-4">
-                            <h5 className="text-lg font-semibold">Email</h5>
-                            <p className="text-slate-400 mt-3">The phrasal sequence of the is now so that many campaign and benefit</p>
-                            
-                            <div className="mt-4">
-                                <Link to="mailto:contact@example.com" className="text-primary">contact@example.com</Link>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="text-center px-6">
-                        <div className="size-16 bg-primary/5 text-primary rounded-2xl flex align-middle justify-center items-center shadow-xs mx-auto">
-                            <i className="ri-map-pin-line text-[26px]"></i>
-                        </div>
-
-                        <div className="content mt-4">
-                            <h5 className="text-lg font-semibold">Location</h5>
-                            <p className="text-slate-400 mt-3">C/54 Northwest Freeway, Suite 558, <br/> Houston, USA 485</p>
-                            
-                            <div className="mt-4">
-                                <Link to="#!" onClick={()=>setOpen(!isOpen)}  className="video-play-icon read-more lightbox text-primary">View on Google map</Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <Footer/>
-        {isOpen && 
-            <div className="flex bg-[#00000099] overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div className="relative p-1 w-full max-w-2xl max-h-full">
-                    <div className="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
-                        <div className="flex items-center justify-between p-1 border-b rounded-t dark:border-gray-600 border-gray-200">
-                            <button type="button" onClick={()=>setOpen(!isOpen)} className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
-                                <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                                </svg>
-                                <span className="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <div className="p-1 md:p-1 space-y-4">
-                            <iframe width="100%" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        }
+      <Footer />
     </>
-  )
+  );
 }

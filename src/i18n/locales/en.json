@@ -122,6 +122,41 @@
     "faqs":     "FAQs",
     "contact":  "Contact"
   },
+  "contact_page": {
+    "hero_title": "Contact Us",
+    "breadcrumb": "Contact",
+    "form_title": "Get in Touch",
+    "label_name": "Your Name",
+    "label_email": "Your Email",
+    "label_subject": "Subject",
+    "label_message": "Message",
+    "ph_name": "Full name",
+    "ph_email": "you@example.com",
+    "ph_subject": "How can we help?",
+    "ph_message": "Tell us about your farm or project…",
+    "btn_send": "Send Message",
+    "success": "Message sent! We'll be in touch soon.",
+    "error_captcha": "Incorrect answer, try again.",
+    "error_fields": "Please fill in all required fields.",
+    "captcha_label": "Verify:",
+    "phone_title": "WhatsApp",
+    "phone_desc": "Available Monday–Friday, 9 am–6 pm (ECT)",
+    "email_title": "Email",
+    "email_desc": "We'll respond within 24 business hours.",
+    "location_title": "Location",
+    "location_desc": "Guayaquil, Ecuador",
+    "location_link": "View on map",
+    "error_send": "Failed to send. Please try again or contact us via WhatsApp.",
+    "btn_sending": "Sending…"
+  },
+  "newsletter": {
+    "placeholder": "Your email",
+    "captcha_label": "Verify: what is",
+    "captcha_placeholder": "Answer",
+    "error_captcha": "Incorrect answer, try again.",
+    "error_email": "Please enter a valid email.",
+    "success": "You're subscribed! Thank you."
+  },
   "lang_switcher": {
     "label": "Language"
   }
