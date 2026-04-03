@@ -8,7 +8,7 @@ import blog7 from '../assets/images/blogs/7.jpg'
 import blog8 from '../assets/images/blogs/8.jpg'
 import blog9 from '../assets/images/blogs/9.jpg'
 
-import team1 from '../assets/images/team/1.jpg'
+const team1 = 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400'
 import team2 from '../assets/images/team/2.jpg'
 import team3 from '../assets/images/team/3.jpg'
 import team4 from '../assets/images/team/4.jpg'
@@ -338,43 +338,43 @@ export const teamData = [
     {
         image: team1,
         name: 'Jefferson Ramirez',
-        position_en: 'Founder & Project Lead',
-        position_es: 'Fundador y Líder de Proyecto',
+        position_en: 'Mechatronics Engineer',
+        position_es: 'Ingeniero Mecatrónico',
         link_lk: "https://www.linkedin.com/in/jeffaprende/"
     },
     {
         image: team2,
         name: 'Juan Saeteros',
-        position_en: 'Machine Learning Engineer',
-        position_es: 'Ingeniero de Machine Learning',
+        position_en: 'Mechatronics Engineer',
+        position_es: 'Ingeniero Mecatrónico',
         link_lk: "https://www.linkedin.com/in/juan-marcos-saeteros-macias/"
     },
     {
-        image: team3,
+        image: team1,
         name: 'Erick Mendoza',
-        position_en: 'Computer Vision Engineer',
-        position_es: 'Ingeniero de Visión por Computadora',
+        position_en: 'Mechatronics Engineer',
+        position_es: 'Ingeniero Mecatrónico',
         link_lk: "https://www.linkedin.com/in/jeffaprende/"
     },
     {
         image: team4,
         name: 'Rolando Mendieta',
-        position_en: 'Software Engineer',
-        position_es: 'Ingeniero de Software',
+        position_en: 'Electrical & Automation Engineer',
+        position_es: 'Ingeniero en Electricidad y Automatización',
         link_lk: "https://www.linkedin.com/in/rolando-mendieta/"
     },
     {
-        image: team5,
-        name: 'Joshua Vallejo',
-        position_en: 'Field Operations Engineer',
-        position_es: 'Ingeniero de Operaciones en Campo',
+        image: team1,
+        name: 'Joshua Cobos',
+        position_en: 'Mechatronics Engineer',
+        position_es: 'Ingeniero Mecatrónico',
         link_lk: "https://www.linkedin.com/in/jeffaprende/"
     },
     {
-        image: team6,
+        image: team1,
         name: 'George Yaguana',
-        position_en: 'Data & Systems Engineer',
-        position_es: 'Ingeniero de Datos y Sistemas',
+        position_en: 'Computer Science Engineer',
+        position_es: 'Ingeniero en Ciencias Computacionales',
         link_lk: "https://www.linkedin.com/in/jeffaprende/"
     },
 ]
