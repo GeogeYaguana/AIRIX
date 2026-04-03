@@ -1,0 +1,7 @@
+# Copiado a dist/ en build. Fuerza MIME correctos para módulos ES (evita
+# "Expected a JavaScript-or-Wasm module script ... application/octet-stream").
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs .cjs
+  AddType text/css .css
+  AddType application/wasm .wasm
+</IfModule>
