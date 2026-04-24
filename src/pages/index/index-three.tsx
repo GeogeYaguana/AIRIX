@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 import NavLight from "../../components/navbar/nav-light";
@@ -7,66 +7,163 @@ import Faq from "../../components/faq";
 import Project from "../../components/project";
 import AboutOne from "../../components/about-one";
 import ServiceThree from "../../components/service-three";
+import SavingsCalculator from "../../components/SavingsCalculator";
 import Footer from "../../components/footer";
+
+import slide2Vid from "../../assets/videos/Slide2Deteccion.mp4";
+import slide3Vid from "../../assets/videos/Slide3Mapa.mp4";
+import slide4Vid from "../../assets/videos/Slide4RobotRealObstacleAvoidance.mp4";
+
+interface Slide {
+  src: string;
+  titleKey: string;
+  title2Key?: string;
+  subtitleKey: string;
+}
+
+const SLIDES: Slide[] = [
+  {
+    src: "/videos/fondo.mp4",
+    titleKey: "carousel.slide1_title",
+    title2Key: "carousel.slide1_title2",
+    subtitleKey: "carousel.slide1_subtitle",
+  },
+  {
+    src: slide2Vid,
+    titleKey: "carousel.slide2_title",
+    subtitleKey: "carousel.slide2_subtitle",
+  },
+  {
+    src: slide3Vid,
+    titleKey: "carousel.slide3_title",
+    subtitleKey: "carousel.slide3_subtitle",
+  },
+  {
+    src: slide4Vid,
+    titleKey: "carousel.slide4_title",
+    subtitleKey: "carousel.slide4_subtitle",
+  },
+];
+
+const INTERVAL_MS = 7000;
+
 export default function IndexThree() {
   const [isOpen, setOpen] = useState<boolean>(false);
   const { t } = useTranslation();
+
+  const [current, setCurrent] = useState(0);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const goTo = (idx: number) => {
+    setCurrent(idx);
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % SLIDES.length);
+    }, INTERVAL_MS);
+  };
+
+  useEffect(() => {
+    timerRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % SLIDES.length);
+    }, INTERVAL_MS);
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, []);
+
+  useEffect(() => {
+    videoRefs.current.forEach((v, i) => {
+      if (!v) return;
+      if (i === current) {
+        v.currentTime = 0;
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+  }, [current]);
 
   return (
     <>
       <NavLight />
 
-      <section className="relative min-h-screen w-full overflow-hidden flex items-center">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <video
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            poster="/images/fondo-poster.jpg"
+      {/* ── Hero Carousel ── */}
+      <section className="relative min-h-screen w-full overflow-hidden">
+
+        {/* Video layers */}
+        {SLIDES.map((slide, i) => (
+          <div
+            key={i}
+            className={`absolute inset-0 transition-opacity duration-1000 pointer-events-none ${
+              i === current ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
           >
-            <source src="/videos/fondo.webm" type="video/webm" />
-            <source src="/videos/fondo.mp4" type="video/mp4" />
-          </video>
-        </div>
-
-        {/* Gradient vignette — preserves video clarity while anchoring the text */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/30 via-black/10 to-black/50 pointer-events-none" />
-
-        {/* Content */}
-        <div className="container relative z-20">
-            <div className="grid grid-cols-1 pb-8 text-center mt-10">
-            <h3
-              className="font-bold text-white lg:leading-normal leading-normal text-4xl lg:text-5xl my-6"
-              style={{ textShadow: "0 2px 16px rgba(0,0,0,0.75), 0 1px 4px rgba(0,0,0,0.9)" }}
+            <video
+              ref={(el) => { videoRefs.current[i] = el; }}
+              className="absolute inset-0 w-full h-full object-cover"
+              muted
+              loop
+              playsInline
+              autoPlay={i === 0}
+              preload={i === 0 ? "auto" : "none"}
             >
-                {t('hero.title_line1')}
-                <br />
-                {t('hero.title_line2')}
-            </h3>
+              <source src={slide.src} type="video/mp4" />
+            </video>
+            {/* Per-slide gradient */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/55" />
+          </div>
+        ))}
 
-            <p
-              className="text-white text-lg max-w-xl mx-auto"
-              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}
-            >
-                {t('hero.subtitle')}
-            </p>
-
-            {/* <div className="mt-8">
-                <Link
-                to=""
-                className="h-12 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-primary text-white"
+        {/* Text overlays */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center">
+          <div className="container text-center px-4">
+            {SLIDES.map((slide, i) => (
+              <div
+                key={i}
+                className={`transition-all duration-700 ${
+                  i === current
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4 pointer-events-none absolute inset-0"
+                }`}
+              >
+                <h3
+                  className="font-bold text-white lg:leading-normal leading-normal text-4xl lg:text-5xl my-6"
+                  style={{ textShadow: "0 2px 16px rgba(0,0,0,0.75), 0 1px 4px rgba(0,0,0,0.9)" }}
                 >
-                See How It Works{" "}
-                <i className="ri-arrow-right-line align-middle ms-1"></i>
-                </Link>
-            </div> */}
-            </div>
+                  {t(slide.titleKey)}
+                  {slide.title2Key && (
+                    <>
+                      <br />
+                      {t(slide.title2Key)}
+                    </>
+                  )}
+                </h3>
+                <p
+                  className="text-white text-lg max-w-2xl mx-auto"
+                  style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}
+                >
+                  {t(slide.subtitleKey)}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-    </section>
+
+        {/* Dot navigation */}
+        <div className="absolute bottom-8 left-0 right-0 z-30 flex justify-center gap-3">
+          {SLIDES.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              aria-label={`Slide ${i + 1}`}
+              className={`rounded-full transition-all duration-300 focus:outline-none ${
+                i === current
+                  ? "w-8 h-3 bg-white"
+                  : "w-3 h-3 bg-white/50 hover:bg-white/75"
+              }`}
+            />
+          ))}
+        </div>
+      </section>
 
      {/* <section className="py-6 border-t border-b border-gray-100 dark:border-gray-700">
         <div className="container relative">
@@ -133,6 +230,9 @@ export default function IndexThree() {
         <div className="container relative md:mt-24 mt-16">
           <Faq />
         </div>
+      </section>
+
+      <SavingsCalculator />
 
        {/* <div className="container relative md:mt-24 mt-16">
           <div className="grid md:grid-cols-12 grid-cols-1 gap-6 items-center">
@@ -164,7 +264,6 @@ export default function IndexThree() {
           </div>
           <BlogOne />
         </div>*/}
-      </section> 
 
       <Footer />
 
