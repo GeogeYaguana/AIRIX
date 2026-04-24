@@ -4,6 +4,17 @@
     "title_line2": "Predice tu cosecha. Detecta riesgos a tiempo.",
     "subtitle": "Airix ayuda a los productores a convertir escaneos de campo en información accionable: conteo de plantas, estimación de producción y detección temprana de enfermedades para que puedas planificar, actuar más rápido y proteger tu cosecha."
   },
+  "carousel": {
+    "slide1_title": "Escanea tu finca.",
+    "slide1_title2": "Predice tu cosecha. Detecta riesgos a tiempo.",
+    "slide1_subtitle": "Airix convierte escaneos de campo en información accionable para que puedas planificar y proteger tu cosecha.",
+    "slide2_title": "Detección de Enfermedades con IA",
+    "slide2_subtitle": "Identificamos enfermedades fitosanitarias en tiempo real directamente en el campo, antes de que se propaguen.",
+    "slide3_title": "Mapeo Inteligente de Campo",
+    "slide3_subtitle": "Genera mapas de variabilidad, analiza el estado del cultivo y toma decisiones basadas en datos reales de tu finca.",
+    "slide4_title": "Robot Autónomo de Campo",
+    "slide4_subtitle": "Navegación autónoma con detección de obstáculos para monitoreo continuo sin necesidad de operador."
+  },
   "intelligence": {
     "title": "Inteligencia de campo, hecha para productores",
     "subtitle": "Desde un simple escaneo con móvil hasta vuelos con dron o multiespectrales, Airix transforma imágenes en mapas, conteos y alertas que puedes usar de inmediato sin necesitar un equipo técnico."
@@ -34,33 +45,33 @@
   "services": [
     {
       "title": "Todos los datos de tu campo en tu bolsillo, solo enfócate en ejecutar",
-      "desc": "Libera horas de trabajo manual en recolección de datos: conteo de mazorcas de cacao, detección de enfermedades fitosanitarias y más, directamente desde el campo."
-    },
-    {
-      "title": "Automatiza el control de maleza en tus campos",
-      "desc": "Usa nuestro rover autónomo para cortar maleza en áreas específicas de tu finca mientras escanea en tiempo real el estado de salud de tus cultivos."
+      "desc": "Libera horas de trabajo manual en recolección de datos: conteo de mazorcas de cacao, proyecciones de volumen de producción, detección de enfermedades fitosanitarias y más, directamente desde el campo."
     },
     {
       "title": "Convierte los datos de campo en decisiones accionables",
-      "desc": "Obtén análisis de suelo denso y de alta precisión en toda tu finca para tomar mejores decisiones sobre fertilización, riego y manejo de cultivos."
+      "desc": "Convierte el estado nutricional de tu cultivo y los microclimas en instrucciones claras: qué aplicar, cuánto y exactamente dónde. Optimiza la fertilización y el riego con decisiones en tiempo real generadas por nuestro sistema autónomo."
     }
   ],
   "faq_items": [
     {
       "title": "¿Cómo funciona el sistema?",
-      "desc": "El rover integra cámaras RGB, LiDAR, sensores ambientales y una unidad de cómputo embebida para ejecutar nuestros modelos de visión por computadora. Detecta enfermedades, cuenta mazorcas de cacao y analiza las condiciones del cultivo en tiempo real directamente en el campo."
+      "desc": "Imagina un carrito que camina solo por tu finca, toma fotos de cada mazorca y te avisa en minutos si hay alguna enferma o cuántas hay listas para cosechar. Eso es Airix: un rover que recorre tus hileras, ve lo que tú no puedes vigilar todo el tiempo, y te manda un reporte directo al celular."
     },
     {
-      "title": "¿Qué tecnología impulsa la plataforma?",
-      "desc": "Nuestra solución combina inteligencia artificial, redes neuronales convolucionales e imágenes RGB para clasificar el estado de salud del cacao, estimar el rendimiento y generar información agronómica accionable para productores y actores del agronegocio."
+      "title": "¿Necesito saber de tecnología para usarlo?",
+      "desc": "Para nada. Nuestro equipo va a tu finca, lo configura todo desde el primer día y te explica cómo leer el reporte. Después, tú solo abres la app y ves qué zonas están bien, cuáles necesitan atención y qué hacer. Es como recibir un mensaje de WhatsApp con el estado de tu campo."
     },
     {
-      "title": "¿Cómo pueden los productores implementar el sistema?",
-      "desc": "La plataforma está diseñada para un despliegue fluido en fincas de cacao. Una vez instalado, el rover navega de forma autónoma por la plantación, recopila datos de campo y sincroniza los resultados en un panel centralizado para monitoreo y toma de decisiones."
+      "title": "¿Cuánto tarda en darme los resultados?",
+      "desc": "El rover recorre aproximadamente una hectárea cada 2 horas. Cuando termina, tienes el reporte listo en minutos, directo en la app. No tienes que esperar días ni mandar muestras a un laboratorio."
     },
     {
-      "title": "¿Qué ocurre después de recopilar los datos?",
-      "desc": "Los datos capturados se procesan a través de nuestro motor de análisis predictivo. Los productores reciben informes sobre riesgo de enfermedades, estimaciones de producción e indicadores de condición del suelo, lo que permite una intervención temprana, un uso optimizado de recursos y una mayor productividad."
+      "title": "¿Qué me dice exactamente el reporte?",
+      "desc": "Te dice cuántas mazorcas están sanas, cuáles tienen señales de enfermedad como Monilia o Phytophthora, qué zonas de tu finca están en riesgo y cuánto podrías cosechar ese mes. Todo en lenguaje sencillo, sin palabras raras."
+    },
+    {
+      "title": "¿Qué tiene por dentro el rover? (especificaciones técnicas)",
+      "desc": "Cámaras RGB de alta resolución para detectar enfermedades y contar mazorcas. LiDAR para navegar solo entre las plantas sin perderse. Sensores de temperatura y humedad para registrar el microclima. Velocidad: 0,5 m/s. Cobertura: hasta 9 ha/día. Separación de hileras: 3 m. Funciona sin internet y sincroniza los datos al volver a zona con señal."
     }
   ],
   "projects": [
@@ -103,14 +114,15 @@
     "general_founded": "2024",
     "purpose_title": "Propósito, Misión y Visión",
     "purpose_label": "Propósito",
-    "purpose_text": "Democratizar el acceso a inteligencia agrícola de precisión para productores de cacao en Latinoamérica, permitiéndoles tomar mejores decisiones con datos reales de campo.",
+    "purpose_text": "Existimos para transformar la vida de los agricultores, brindándoles tecnología accesible que les permita cultivar de manera más eficiente, cuidar la tierra y generar más alimentos. Queremos que cada cosecha no solo fortalezca sus hogares, sino que también llegue a las mesas de todos, asegurando un precio justo para quienes más lo necesitan.",
     "mission_label": "Misión",
-    "mission_text": "Transformar la forma en que los agricultores monitorean y gestionan sus cultivos mediante tecnología accesible, simple y accionable — desde un escaneo con móvil hasta una plataforma completa de analítica predictiva.",
+    "mission_text": "Ayudamos a los agricultores a cuidar mejor sus cultivos y a aumentar su producción, dándoles tecnologías accesibles que les ayuden a ahorrar dinero. Muchos agricultores pequeños pierden sus cosechas o no aprovechan al máximo su tierra porque no pueden pagar tecnologías caras. Queremos cambiar esto, ayudando a que todos tengan acceso a nuestra tecnología y produzcan alimentos a precios competitivos mientras mejoran sus tierras.",
     "vision_label": "Visión",
-    "vision_text": "Ser la plataforma de referencia para la digitalización del campo en Latinoamérica, impulsando decisiones basadas en datos reales que mejoren la productividad, reduzcan pérdidas y promuevan la agricultura sostenible.",
+    "vision_text": "El mundo que aspiramos a construir es uno donde todas las personas puedan vivir con dignidad y acceder a alimentos suficientes, aprovechando la tecnología para producir de manera más eficiente en menos espacio, reduciendo el consumo de recursos y promoviendo una agricultura sostenible.",
     "team_title": "El Equipo",
     "team_subtitle": "Un grupo multidisciplinario de ingenieros y agronomistas construyendo el futuro de la agricultura inteligente.",
     "team_linkedin": "Ver LinkedIn",
+    "allies_kicker": "Ecosistema de confianza",
     "allies_title": "Aliados y Colaboradores",
     "allies_subtitle": "Organizaciones e instituciones que apoyan el desarrollo y despliegue en campo de Airix.",
     "allies_placeholder": "Logos y descripciones de aliados próximamente."
@@ -157,7 +169,99 @@
     "error_email": "Por favor ingresa un correo válido.",
     "success": "¡Suscrito! Gracias."
   },
+  "cost_calculator": {
+    "kicker": "Calculadora de costos",
+    "title": "¿Cuánto cuesta monitorear tu finca?",
+    "subtitle": "Selecciona tu plan y calcula el costo mensual real de tener Airix en tu campo.",
+    "label_hectares": "Hectáreas a monitorear",
+    "label_plan": "Plan de suscripción",
+    "label_new_client": "¿Eres nuevo cliente?",
+    "plan_basic_name": "Plan Básico",
+    "plan_basic_freq": "1 recorrido / mes",
+    "plan_basic_price": "$50 / ha / mes",
+    "plan_premium_name": "Plan Premium",
+    "plan_premium_freq": "2 recorridos / mes (cada 15 días)",
+    "plan_premium_price": "$90 / ha / mes",
+    "yes": "Sí",
+    "no": "No",
+    "result_monthly": "Suscripción mensual",
+    "result_onboarding": "Configuración inicial (único)",
+    "result_first_month": "Inversión primer mes",
+    "result_annual": "Costo anual estimado",
+    "result_per_visit": "Costo por visita de campo",
+    "result_note": "El onboarding incluye configuración de rutas, sectores y alta del cliente. Se cobra una sola vez.",
+    "includes_title": "¿Qué incluye?",
+    "includes_basic": ["Reporte en app tras cada recorrido", "Conteo de mazorcas y detección de enfermedades", "Mapa de variabilidad del lote", "Soporte técnico por WhatsApp"],
+    "includes_premium": ["Todo lo del Plan Básico", "2 recorridos por mes (cada 15 días)", "Alertas de riesgo en tiempo real", "Acceso a historial comparativo de temporadas"],
+    "cta": "Solicitar propuesta personalizada",
+    "badge_popular": "Más popular"
+  },
+  "calculator": {
+    "kicker": "Calculadora de ahorro",
+    "title": "¿Cuánto podrías ahorrar con Airix?",
+    "subtitle": "Ingresa los datos de tu finca y calcula el ahorro estimado anual al usar nuestra solución de monitoreo autónomo.",
+    "label_hectares": "Hectáreas de cacao",
+    "label_yield": "Producción actual (kg/ha/año)",
+    "label_price": "Precio del cacao ($/kg)",
+    "label_disease_loss": "Pérdida estimada por enfermedades (%)",
+    "label_input_cost": "Costo en insumos (fertilizantes/riego) ($/ha/año)",
+    "result_title": "Ahorro estimado anual",
+    "result_disease": "Reducción de pérdidas por enfermedades",
+    "result_yield": "Mejora en producción",
+    "result_labor": "Ahorro en mano de obra de monitoreo",
+    "result_inputs": "Optimización de insumos",
+    "result_total": "Ahorro total estimado",
+    "result_note": "Estimaciones basadas en promedios del sector cacaotero en Ecuador. Los resultados reales varían según condiciones de campo.",
+    "disclaimer_disease": "Airix detecta enfermedades ~35% antes, reduciendo pérdidas en ese porcentaje.",
+    "disclaimer_yield": "Mejor planificación de cosecha mejora el rendimiento ~8%.",
+    "disclaimer_labor": "El rover automatiza el monitoreo, ahorrando ~65% del tiempo de scouting manual (2 h/ha/semana).",
+    "disclaimer_inputs": "Decisiones precisas de fertilización y riego reducen el gasto en insumos ~15%.",
+    "cta": "Hablar con un especialista"
+  },
   "lang_switcher": {
     "label": "Idioma"
+  },
+  "services_page": {
+    "hero_title": "Servicios",
+    "breadcrumb": "Servicios",
+    "section_kicker": "Lo que hacemos",
+    "section_title": "Tecnología de campo, lista para usarse",
+    "section_subtitle": "Desde un escaneo con móvil hasta análisis multiespectrales, Airix convierte datos de campo en información que puedes usar de inmediato.",
+    "cta_title": "¿Listo para digitalizar tu finca?",
+    "cta_subtitle": "Agenda una visita y te mostramos cómo funciona en tu campo.",
+    "cta_btn_whatsapp": "Consultar por WhatsApp",
+    "cta_btn_schedule": "Agendar una visita",
+    "items": [
+      {
+        "icon": "ri-camera-ai-line",
+        "title": "Escaneo y Monitoreo de Campo",
+        "desc": "Usa tu móvil, dron o sensores multiespectrales para capturar datos de tu finca. Airix procesa las imágenes y entrega conteos de plantas, detección de enfermedades y proyecciones de volumen de producción, directamente desde el campo."
+      },
+      {
+        "icon": "ri-microscope-line",
+        "title": "Detección Temprana de Enfermedades",
+        "desc": "Nuestros modelos de visión por computadora identifican señales tempranas de enfermedades fitosanitarias en cacao antes de que se propaguen. Actúa a tiempo y protege tu cosecha con alertas automáticas por zona de riesgo."
+      },
+      {
+        "icon": "ri-bar-chart-box-line",
+        "title": "Estimación de Rendimiento",
+        "desc": "Cuenta mazorcas de cacao y estima la producción esperada por lote o parcela. Planifica la logística de cosecha, negocia con compradores y optimiza tus recursos con proyecciones basadas en datos reales de campo."
+      },
+      {
+        "icon": "ri-map-2-line",
+        "title": "Mapas de Variabilidad de Campo",
+        "desc": "Genera mapas espaciales de tu finca con variabilidad de salud del cultivo, densidad de plantas y zonas de riesgo. Identifica dónde intervenir primero y distribuye insumos con mayor precisión."
+      },
+      {
+        "icon": "ri-lightbulb-flash-line",
+        "title": "Decisiones Accionables en Tiempo Real",
+        "desc": "Convierte el estado nutricional de tu cultivo y los microclimas en instrucciones claras: qué aplicar, cuánto y exactamente dónde. Optimiza la fertilización y el riego con decisiones generadas por nuestro sistema autónomo."
+      },
+      {
+        "icon": "ri-layout-grid-line",
+        "title": "Plataforma AgroData",
+        "desc": "Centraliza todos los datos de tu finca en un panel digital. Consulta el historial de escaneos, compara temporadas, genera reportes y comparte información con tu equipo o con compradores en cualquier momento."
+      }
+    ]
   }
 }
