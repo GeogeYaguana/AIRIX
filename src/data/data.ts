@@ -8,13 +8,14 @@ import blog7 from '../assets/images/blogs/7.jpg'
 import blog8 from '../assets/images/blogs/8.jpg'
 import blog9 from '../assets/images/blogs/9.jpg'
 
-const teamDefault = 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400'
-import team1 from '../assets/images/team/1.jpg'
-import team2 from '../assets/images/team/2.jpg'
-import team3 from '../assets/images/team/3.jpg'
-import team4 from '../assets/images/team/4.jpg'
-import team5 from '../assets/images/team/5.jpg'
-import team6 from '../assets/images/team/6.jpg'
+import equipoJefferson from '../assets/images/equipo/jefferson.JPG'
+import equipoJuan      from '../assets/images/equipo/juan.JPG'
+import equipoErick     from '../assets/images/equipo/erick.JPG'
+import equipoRolando   from '../assets/images/equipo/rolando.JPG'
+import equipoJoshua    from '../assets/images/equipo/joshua.JPG'
+import equipoGeorge    from '../assets/images/equipo/george.JPG'
+import equipoMilena    from '../assets/images/equipo/milena.JPG'
+import equipoDiego     from '../assets/images/equipo/diego.JPG'
 
 import brand1 from '../assets/images/client/amazon.svg'
 import brand2 from '../assets/images/client/google.svg'
@@ -133,42 +134,42 @@ export const projectdata = [
 
 export const clientData = [
     {
-        image:teamDefault,
+        image:'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400',
         rate:['ri-star-fill','ri-star-fill','ri-star-fill','ri-star-fill','ri-star-fill'],
         desc:`" Online education has allowed me to balance work and study easily. The flexibility of choosing when to study has made it a perfect fit for my busy schedule! "`,
         name:'Ramon Gibson',
         position:'Customer'
     },
     {
-        image:team2,
+        image:'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400',
         rate:['ri-star-fill','ri-star-fill','ri-star-fill','ri-star-fill','ri-star-fill'],
         desc:`" I was surprised by how interactive online courses can be. The live discussions and group projects kept me engaged, and I felt connected to my classmates "`,
         name:'Megan Cade',
         position:'Customer'
     },
     {
-        image:team3,
+        image:'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400',
         rate:['ri-star-fill','ri-star-fill','ri-star-fill','ri-star-fill','ri-star-fill'],
         desc:`" Studying online saved me a lot of money, and I didn't have to commute. The quality of the courses was fantastic, and I could learn at my own pace. "`,
         name:'Stella Robinson',
         position:'Customer'
     },
     {
-        image:team4,
+        image:'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400',
         rate:['ri-star-fill','ri-star-fill','ri-star-fill','ri-star-fill','ri-star-fill'],
         desc:`" Online learning requires discipline, but it’s worth it. I had to work on time management, but the flexibility and quality of the content made it rewarding. "`,
         name:'Paul Phelan',
         position:'Customer'
     },
     {
-        image:team5,
+        image:'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400',
         rate:['ri-star-fill','ri-star-fill','ri-star-fill','ri-star-fill','ri-star-fill'],
         desc:`" Taking online courses has helped me grow professionally. I could apply what I learned immediately at work, and the knowledge I gained was practical and up-to-date "`,
         name:'Christa Smith',
         position:'Customer'
     },
     {
-        image:team6,
+        image:'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400',
         rate:['ri-star-fill','ri-star-fill','ri-star-fill','ri-star-fill','ri-star-fill'],
         desc:`" The biggest advantage of online education is convenience, but it requires self-motivation. If you're committed, it’s a great way to advance your skills "`,
         name:'Calvin Carlo',
@@ -337,46 +338,60 @@ export const footerSocial = [
 
 export const teamData = [
     {
-        image: teamDefault,
+        image: equipoJefferson,
         name: 'Jefferson Ramirez',
         position_en: 'Mechatronics Engineer',
         position_es: 'Ingeniero Mecatrónico',
         link_lk: "https://www.linkedin.com/in/jeffaprende/"
     },
     {
-        image: team2,
+        image: equipoJuan,
         name: 'Juan Saeteros',
         position_en: 'Mechatronics Engineer',
         position_es: 'Ingeniero Mecatrónico',
         link_lk: "https://www.linkedin.com/in/juan-marcos-saeteros-macias/"
     },
     {
-        image: teamDefault,
+        image: equipoErick,
         name: 'Erick Mendoza',
         position_en: 'Mechatronics Engineer',
         position_es: 'Ingeniero Mecatrónico',
         link_lk: "https://www.linkedin.com/in/erick-mendoza-macias/"
     },
     {
-        image: team4,
+        image: equipoRolando,
         name: 'Rolando Mendieta',
         position_en: 'Electrical & Automation Engineer',
         position_es: 'Ingeniero en Electricidad y Automatización',
         link_lk: "https://www.linkedin.com/in/rolando-mendieta/"
     },
     {
-        image: team1,
+        image: equipoJoshua,
         name: 'Joshua Cobos',
         position_en: 'Mechatronics Engineer',
         position_es: 'Ingeniero Mecatrónico',
         link_lk: "https://www.linkedin.com/in/josuacobos/"
     },
     {
-        image: teamDefault,
+        image: equipoGeorge,
         name: 'George Yaguana',
         position_en: 'Computer Science Engineer',
         position_es: 'Ingeniero en Ciencias Computacionales',
         link_lk: "https://www.linkedin.com/in/georgeyaguana/"
+    },
+    {
+        image: equipoMilena,
+        name: 'Milena Rodriguez',
+        position_en: 'Mechatronics Engineer',
+        position_es: 'Ingeniera Mecatrónica',
+        link_lk: "https://www.linkedin.com/in/"
+    },
+    {
+        image: equipoDiego,
+        name: 'Diego Salazar',
+        position_en: 'Business Administrator',
+        position_es: 'Administrador de Empresas',
+        link_lk: "https://www.linkedin.com/in/"
     },
 ]
 export const blogData = [
