@@ -13,11 +13,10 @@ export default function ServiceThree() {
   return (
     <div className="lg:col-span-7 md:col-span-6">
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-6 md:mt-0 mt-6 items-stretch">
-        {services.slice(0, 3).map((item: ServicesData, index: number) => (
+        {services.slice(0, 2).map((item: ServicesData, index: number) => (
           <div
             key={index}
-            className={`group flex flex-col p-6 bg-white dark:bg-slate-900 shadow-sm shadow-slate-200 dark:shadow-slate-800 hover:shadow-md duration-500 rounded-2xl relative overflow-hidden
-              ${index === 2 ? 'lg:col-span-2 lg:max-w-sm lg:mx-auto w-full' : ''}`}
+            className="group flex flex-col p-6 bg-white dark:bg-slate-900 shadow-sm shadow-slate-200 dark:shadow-slate-800 hover:shadow-md duration-500 rounded-2xl relative overflow-hidden"
           >
             {/* Background image on hover */}
             <div
