@@ -276,7 +276,7 @@ export default function AboutUs() {
       <section className="relative py-20 bg-white dark:bg-slate-950 border-y border-slate-200 dark:border-slate-800">
         <div className="container relative text-center">
           <p className="uppercase tracking-[0.2em] text-xs font-semibold text-primary mb-3">
-            Trusted ecosystem
+            {t("about_page.allies_kicker")}
           </p>
           <h4 className="md:text-3xl text-2xl font-semibold text-slate-900 dark:text-white mb-3">
             {t("about_page.allies_title")}
